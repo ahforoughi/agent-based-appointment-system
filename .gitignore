@@ -1,0 +1,24 @@
+# gitignore file for the python project
+test.db
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+*.egg-info
+*.egg
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.bak
+*.cache
+*.project
+*.pydevproject
+*.settings
+*.tmproj
+*.esproj
+*.pyc
