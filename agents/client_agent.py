@@ -48,9 +48,45 @@ class ClientAgent(Agent):
     class GetAppoinmentsTimesBehavior(OneShotBehaviour):
         async def run(self):
             print("GetAppoinmentsTimesBehavior running")
+            msg = Message(to="scheduler@localhost")     # Instantiate the message
+            msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
+            
+            msg.body = json.dumps({
+            "type": "test"
+            })                    
 
-    
-    
+            await self.send(msg)
+            print("Message sent!")
+
+            # set exit_code for the behaviour
+            self.exit_code = "Job Finished!"
+
+            # stop agent from behaviour
+            await self.agent.stop()
+            
+
+    class SetAppoinmentBehavior(OneShotBehaviour):
+        async def run(self):
+            print("SetAppoinmentBehavior running")
+            msg = Message(to="scheduler@localhost")     # Instantiate the message
+            msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
+
+            msg.body = json.dumps({
+            "type": "test"
+            })
+            msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
+            msg.set_metadata("language", "OWL-S")       # Set the language of the message content
+
+            await self.send(msg)
+            print("Message sent!")
+
+            # set exit_code for the behaviour
+            self.exit_code = "Job Finished!"
+
+            # stop agent from behaviour
+            await self.agent.stop()
+
+
     async def setup(self):
         print("ClientAgent started")
         
@@ -60,6 +96,9 @@ class ClientAgent(Agent):
         elif self.behavior == "get_appoinments_times":
             self.get_appoinments_times_behavior = self.GetAppoinmentsTimesBehavior()
             self.add_behaviour(self.get_appoinments_times_behavior)
+        elif self.behavior == "set_appoinment":
+            self.set_appoinment_behavior = self.SetAppoinmentBehavior()
+            self.add_behaviour(self.set_appoinment_behavior)
         elif self.behavior == "register"    :   
             self.registeration_behavior = self.RegisterationBehavior()
             self.add_behaviour(self.registeration_behavior)
