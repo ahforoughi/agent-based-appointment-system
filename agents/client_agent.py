@@ -9,26 +9,37 @@ from sqlalchemy.orm import Session
 
 
 class ClientAgent(Agent):
-    def __init__(self, jid, password, behavior):
+    def __init__(self, jid, password, behavior, username, email, phone, user_password):
         print("ClientAgent init")
         super().__init__(jid, password)
 
         self.behavior = behavior
+        self.username = username
+        self.email = email
+        self.phone = phone
+        self.user_password = user_password
     
+
     
     class RegisterationBehavior(OneShotBehaviour):
         async def run(self):
-            print("RegisterationBehavior running")
+            # get the attributes from the ClientAgent class
+            self.username = self.agent.username
+            self.email = self.agent.email
+            self.phone = self.agent.phone
+            self.user_password = self.agent.user_password
+
+            print("RegisterationBehavior running", )
             msg = Message(to="register@localhost")     # Instantiate the message
             msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
             msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
             msg.set_metadata("language", "OWL-S")       # Set the language of the message content
             
             msg.body = json.dumps({
-            "username": "self.username",
-            "email": "amir@gmail.com",
-            "phone": "self.phone",
-            "password": "self.password"
+            "username": self.username,
+            "user_password": self.user_password,
+            "email": self.email,
+            "phone": self.phone
             })                    
 
             await self.send(msg)
