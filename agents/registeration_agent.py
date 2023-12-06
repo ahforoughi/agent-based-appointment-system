@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 
 # class for the receiver agent (inherits from spade.agent.Agent) 
 class RegisterationAgent(Agent):
-    class RecvBehav(OneShotBehaviour):
+    class AddUser(OneShotBehaviour):
         async def run(self):
             print("RegisterationAgent running")
 
