@@ -10,11 +10,11 @@ from sqlalchemy.orm import Session
 
 
 # class for the receiver agent (inherits from spade.agent.Agent) 
-class RegisterationAgent(Agent):
+class LoginAgent(Agent):
 
-    class AddUser(OneShotBehaviour):
+    class LoginUser(OneShotBehaviour):
         async def run(self):
-            print("RegisterationAgent running")
+            print("LoginUser running")
 
             msg = await self.receive(timeout=10) # wait for a message for 10 seconds
             if msg:
@@ -27,22 +27,19 @@ class RegisterationAgent(Agent):
 
                 username = data["username"]
                 user_password = data["user_password"]
-                email = data["email"]
-                phone = data["phone"]
 
                 db: Session = SessionLocal()
 
-                # Check if user exists
-                if db.query(User).filter(User.username == username).first():
-                    print(f"User {username} already exists.")
+                # check for user in database and return user id if exists or None if not exists 
+                user = db.query(User).filter(User.username == username).first()
+                if user:
+                    if user.user_password == user_password:
+                        print(f"User {username} logged in.")
+                    else:
+                        print(f"User {username} password is incorrect.")
                 else:
-                    # Register new user
-                    new_user = User(username=username, user_password=user_password, email=email, phone=phone)
-                    db.add(new_user)
-                    db.commit()
-                    print(f"Registered new user: {username}")
+                    print(f"User {username} does not exist.")
 
-                db.close()
             except Exception as e:
                 print(f"An error occurred: {e}")
 
@@ -50,8 +47,8 @@ class RegisterationAgent(Agent):
             await self.agent.stop()
 
     async def setup(self):
-        print("RegisterationAgent started")
-        b = self.AddUser()
+        print("LoginAgent started")
+        b = self.LoginUser()
         template = Template()
-        template.set_metadata("performative", "inform")
+        # template.set_metadata("performative", "Request")
         self.add_behaviour(b, template)

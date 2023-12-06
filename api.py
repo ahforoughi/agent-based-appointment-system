@@ -45,6 +45,22 @@ async def register_user(user: User):
 
 
 
+class LoginData(BaseModel):
+    username: str
+    password: str
+
+# Define a root `/login` endpoint which receives just `username` and `password` parameters
+@app.post("/login")
+async def login(login_data: LoginData):
+    username = login_data.username
+    password = login_data.password
+
+    output = subprocess.check_output(["python", "main.py", "--login", username, password])
+    result = output.splitlines()[-1].decode("utf-8")
+
+    return {"result": result}
+
+
 
 
 # Define a root for reading from the database

@@ -8,29 +8,28 @@ from models import User, SessionLocal
 from sqlalchemy.orm import Session
 from agents.registeration_agent import RegisterationAgent
 from agents.client_agent import ClientAgent
-from constants import REGISTER_AGENT, CLIENT_AGENT
+from agents.login_agent import LoginAgent
+from constants import REGISTER_AGENT, CLIENT_AGENT, LOGIN_AGENT
 
-# take command line arguments
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("--register", help="register new user", nargs='*')
-parser.add_argument("--login", help="login user", action="store_true")
-parser.add_argument("--get_appoinments_times", help="get appoinments times", action="store_true")
+from args_parser import parser
 
 args = parser.parse_args()
 
-# define a variable to set the action of the agent based on the command line arguments
-behavior = None
-if args.register not in [False, True]:
-    print(f"Registering new user with identifier: {args.register}")
-    behavior = "register"
-elif args.login:
-    behavior = "login"
-elif args.get_appoinments_times:
-    behavior = "get_appoinments_times"
+
+
+def get_behavior():
+    if args.register:
+        return "register"
+    elif args.login:
+        return "login"
+    elif args.get_appoinments_times:
+        return "get_appoinments_times"
+
+behavior = get_behavior()
+
+print(f"Behavior: {behavior}")
 
 async def main():
-
     global username, email, phone, user_password
     if args.register:
         print("Registering new user")
@@ -43,13 +42,33 @@ async def main():
         await registeration_agent.start(auto_register=True)
         print("registeration_agent started")
 
-    print(username, email, phone, user_password)
-    client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior,
-                               username=username, email=email, phone=phone, user_password=user_password)
-    await client_agent.start(auto_register=True)
-    print("Sender started")
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior,
+                                username=username, email=email, phone=phone, user_password=user_password)
+        await client_agent.start(auto_register=True)
+        print(f"Client Agent with behavior {behavior} started")
 
-    # await spade.wait_until_finished(registeration_agent)
+
+
+    elif args.login:
+        username = args.login[0]
+        user_password = args.login[1]
+        
+        login_agent = LoginAgent(LOGIN_AGENT.jid, LOGIN_AGENT.password)
+        await login_agent.start(auto_register=True)
+
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior,
+                                username=username, user_password=user_password)
+        await client_agent.start(auto_register=True)
+        print(f"Client Agent with behavior {behavior} started")
+    
+
+
+
+
+
+
+
+    # await spade.wait_until_finished(ClientAgent)
     # print("Agents finished")
 
 
