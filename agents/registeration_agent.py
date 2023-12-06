@@ -1,6 +1,6 @@
 import spade
 from spade.agent import Agent
-from spade.behaviour import OneShotBehaviour
+from spade.behaviour import OneShotBehaviour, CyclicBehaviour
 from spade.message import Message
 from spade.template import Template
 import json
@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 class RegisterationAgent(Agent):
     class RecvBehav(OneShotBehaviour):
         async def run(self):
-            print("RegisterationAgent RecvBehav running")
+            print("RegisterationAgent running")
 
             msg = await self.receive(timeout=10) # wait for a message for 10 seconds
             if msg:
