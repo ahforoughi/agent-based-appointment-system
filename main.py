@@ -14,19 +14,17 @@ from constants import REGISTER_AGENT, CLIENT_AGENT, SCHEDULER_AGENT
 # take command line arguments
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--register", help="register new user", action="store_true")
+parser.add_argument("--register", help="register new user", nargs='*')
 parser.add_argument("--login", help="login user", action="store_true")
 parser.add_argument("--get_appoinments_times", help="get appoinments times", action="store_true")
 parser.add_argument("--set_appoinment", help="set appoinment", action="store_true")
 
 args = parser.parse_args()
 
-if args.register:
-    print("Registering new user")
-
 # define a variable to set the action of the agent based on the command line arguments
 behavior = None
-if args.register:
+if args.register not in [False, True]:
+    print(f"Registering new user with identifier: {args.register}")
     behavior = "register"
 elif args.login:
     behavior = "login"
@@ -36,13 +34,22 @@ elif args.set_appoinment:
     behavior = "set_appoinment"
 
 async def main():
-    registeration_agent = RegisterationAgent(REGISTER_AGENT.jid, REGISTER_AGENT.password)
-    await registeration_agent.start(auto_register=True)
 
-    scheduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password)
-    await scheduler_agent.start(auto_register=True)
+    global username, email, phone, user_password
+    if args.register:
+        print("Registering new user")
+        username = args.register[0]
+        email = args.register[1]
+        phone = args.register[2]
+        user_password = args.register[3]
 
-    client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior)
+        registeration_agent = RegisterationAgent(REGISTER_AGENT.jid, REGISTER_AGENT.password)
+        await registeration_agent.start(auto_register=True)
+        print("registeration_agent started")
+
+    print(username, email, phone, user_password)
+    client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior,
+                               username=username, email=email, phone=phone, user_password=user_password)
     await client_agent.start(auto_register=True)
 
     # await spade.wait_until_finished(registeration_agent)

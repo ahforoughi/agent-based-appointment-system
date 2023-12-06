@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 
 # class for the receiver agent (inherits from spade.agent.Agent) 
 class RegisterationAgent(Agent):
-    class AddUser(OneShotBehaviour):
+    class RecvBehav(OneShotBehaviour):
         async def run(self):
             print("RegisterationAgent running")
 
@@ -24,7 +24,7 @@ class RegisterationAgent(Agent):
                 data = json.loads(msg.body)
 
                 username = data["username"]
-                password = data["password"]
+                user_password = data["user_password"]
                 email = data["email"]
                 phone = data["phone"]
 
@@ -35,7 +35,7 @@ class RegisterationAgent(Agent):
                     print(f"User {username} already exists.")
                 else:
                     # Register new user
-                    new_user = User(username=username, password=password)
+                    new_user = User(username=username, user_password=user_password, email=email, phone=phone)
                     db.add(new_user)
                     db.commit()
                     print(f"Registered new user: {username}")
