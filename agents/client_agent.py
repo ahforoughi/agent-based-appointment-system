@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 
 class ClientAgent(Agent):
-    def __init__(self, jid, password, behavior, username, email, phone, user_password):
+    def __init__(self, jid, password, behavior, username, email=None, phone=None, user_password=None):
         print("ClientAgent init")
         super().__init__(jid, password)
 
@@ -28,7 +28,7 @@ class ClientAgent(Agent):
             self.email = self.agent.email
             self.phone = self.agent.phone
             self.user_password = self.agent.user_password
-
+            
             print("RegisterationBehavior running", )
             msg = Message(to="register@localhost")     # Instantiate the message
             msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
@@ -54,7 +54,29 @@ class ClientAgent(Agent):
     class LoginBehavior(OneShotBehaviour):
         async def run(self):
             print("LoginBehavior running")
-            # await self.agent.stop()
+            
+            self.username = self.agent.username
+            self.user_password = self.agent.user_password
+
+            msg = Message(to="login@localhost")     # Instantiate the message
+            # msg.set_metadata("performative", "Request")  # Set the "inform" FIPA performative
+            
+            
+            msg.body = json.dumps({
+            "username": self.username,
+            "user_password": self.user_password,
+
+            })                    
+
+            await self.send(msg)
+            print("Message sent!")
+
+            # set exit_code for the behaviour
+            self.exit_code = "Job Finished!"
+
+            # stop agent from behaviour
+            await self.agent.stop()
+
 
     class GetAppoinmentsTimesBehavior(OneShotBehaviour):
         async def run(self):
