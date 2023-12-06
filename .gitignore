@@ -22,3 +22,7 @@ build/
 *.tmproj
 *.esproj
 *.pyc
+
+# ignore all __pycache__ directories
+__pycache__/*
+*/__pycache__/*
