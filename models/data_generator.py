@@ -1,5 +1,5 @@
 import json
-from temp import Patient, Doctor, Appointment, SessionLocal_patient, SessionLocal_doctor, SessionLocal_appointment
+from temp import Patient, Doctor, Appointment, SessionLocal
 
 # Create sample data for patients
 patients_data = [
@@ -142,7 +142,7 @@ appointments_data = [
 
 # Session for patients
 print("patients started!")
-db_patient = SessionLocal_patient()
+db_patient = SessionLocal()
 for patient_data in patients_data:
     patient = Patient(**patient_data)
     db_patient.add(patient)
@@ -153,7 +153,7 @@ print("patients done!")
 
 # Session for doctors
 print("doctors started!")
-db_doctor = SessionLocal_doctor()
+db_doctor = SessionLocal()
 for doctor_data in doctors_data:
     doctor = Doctor(**doctor_data)
     db_doctor.add(doctor)
@@ -164,7 +164,7 @@ print("doctors done!")
 
 # Session for appointments
 print("appointment started!")
-db_appointment = SessionLocal_appointment()
+db_appointment = SessionLocal()
 for appointment_data in appointments_data:
     appointment = Appointment(**appointment_data)
     db_appointment.add(appointment)

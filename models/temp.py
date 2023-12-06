@@ -50,21 +50,15 @@ class Appointment(Base):
 
 
 # Separate database files for each class
-DATABASE_URL_PATIENT = "sqlite:///./database/patients.db"
-DATABASE_URL_DOCTOR = "sqlite:///./database/doctors.db"
-DATABASE_URL_APPOINTMENT = "sqlite:///./database/appointments.db"
+DATABASE_URL = "sqlite:///../APS.db"
 
-engine_patient = create_engine(DATABASE_URL_PATIENT)
-engine_doctor = create_engine(DATABASE_URL_DOCTOR)
-engine_appointment = create_engine(DATABASE_URL_APPOINTMENT)
+
+engine = create_engine(DATABASE_URL)
+
 
 # Create tables
-Base.metadata.create_all(bind=engine_patient)
-Base.metadata.create_all(bind=engine_doctor)
-Base.metadata.create_all(bind=engine_appointment)
+Base.metadata.create_all(bind=engine)
+
 
 # Session creation (you can create separate sessions for each engine if needed)
-SessionLocal_patient = sessionmaker(autocommit=False, autoflush=False, bind=engine_patient)
-SessionLocal_doctor = sessionmaker(autocommit=False, autoflush=False, bind=engine_doctor)
-SessionLocal_appointment = sessionmaker(autocommit=False, autoflush=False, bind=engine_appointment)
-
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
