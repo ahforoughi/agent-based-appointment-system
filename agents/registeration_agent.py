@@ -1,4 +1,3 @@
-import spade
 from spade.agent import Agent
 from spade.behaviour import OneShotBehaviour, CyclicBehaviour
 from spade.message import Message
@@ -11,7 +10,6 @@ from sqlalchemy.orm import Session
 
 # class for the receiver agent (inherits from spade.agent.Agent) 
 class RegisterationAgent(Agent):
-
     class AddUser(OneShotBehaviour):
         async def run(self):
             print("RegisterationAgent running")
