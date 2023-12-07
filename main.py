@@ -2,7 +2,8 @@ import spade
 from agents.registeration_agent import RegisterationAgent
 from agents.client_agent import ClientAgent
 from agents.login_agent import LoginAgent
-from constants import REGISTER_AGENT, CLIENT_AGENT, LOGIN_AGENT
+from agents.scheduler_agent import SchedulerAgent
+from constants import REGISTER_AGENT, CLIENT_AGENT, LOGIN_AGENT, SCHEDULER_AGENT, EMAIL_AGENT
 
 from args_parser import parser
 
@@ -20,7 +21,7 @@ def get_behavior():
 
 behavior = get_behavior()
 
-print(f"Behavior: {behavior}")
+print(f"Client Agent Behavior: {behavior}")
 
 async def main():
     global username, email, phone, user_password
@@ -40,8 +41,6 @@ async def main():
         await client_agent.start(auto_register=True)
         print(f"Client Agent with behavior {behavior} started")
 
-
-
     elif args.login:
         username = args.login[0]
         user_password = args.login[1]
@@ -55,8 +54,24 @@ async def main():
         print(f"Client Agent with behavior {behavior} started")
     
 
+    elif args.get_appoinments_times:
 
 
+        
+        global appoinment_type
+        if args.get_appoinments_times[0] == "all":
+            print("Getting all appointments times")
+            appoinment_type = "all"
+        
+        else:
+            appoinment_type = args.get_appoinments_times[0]
+            print(f"Getting appointments times for type: {args.get_appoinments_times[0]}")
+
+        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password)
+        await schduler_agent.start(auto_register=True)
+
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, behavior=behavior, appoinment_type="all")
+        await client_agent.start(auto_register=True)
 
 
 

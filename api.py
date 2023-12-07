@@ -5,7 +5,7 @@ import sys
 from models import *
 from pydantic import BaseModel, EmailStr
 from fastapi.responses import JSONResponse
-
+import json
 # config logging
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -67,20 +67,28 @@ async def login(login_data: LoginData):
         return JSONResponse(content={"message": "User login Failed"}, status_code=400)
 
 
+class AppointmentType(BaseModel):
+    appoinment_type: str
 
-# if the request body is empty, the request will return all the appointments times otherwise search for the specific type
 @app.post("/appointments")
-async def get_appointments_times():
+async def get_appointments_times(request: AppointmentType):
+    type = request.appoinment_type
+    print(type)
+
     # check if the request body is empty
-    if not request.body:
-        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times"])
+    if type == "all":
+        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
     else:
         # get the type from the request body
         data = json.loads(request.body)
         type = data["type"]
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
 
-    return {"result": result}
+    result = output.splitlines()[-1].decode("utf-8")
+    print(result)
+    # return result
+    # return the output as json 
+    return JSONResponse(content=json.dumps(result), status_code=200)
 
 
 # Define a root for reading from the database

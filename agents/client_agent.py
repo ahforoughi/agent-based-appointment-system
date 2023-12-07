@@ -6,7 +6,7 @@ import json
 
 
 class ClientAgent(Agent):
-    def __init__(self, jid, password, behavior, username, email=None, phone=None, user_password=None):
+    def __init__(self, jid, password, behavior, username=None, email=None, phone=None, user_password=None, appoinment_type=None):
         print("ClientAgent init")
         super().__init__(jid, password)
 
@@ -15,6 +15,7 @@ class ClientAgent(Agent):
         self.email = email
         self.phone = phone
         self.user_password = user_password
+        self.appoinment_type = appoinment_type
     
 
     
@@ -26,7 +27,7 @@ class ClientAgent(Agent):
             self.phone = self.agent.phone
             self.user_password = self.agent.user_password
             
-            print("RegisterationBehavior running", )
+            print("RegisterationBehavior in Client Agent running", )
             msg = Message(to="register@localhost")     # Instantiate the message
             msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
             msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
@@ -50,7 +51,7 @@ class ClientAgent(Agent):
 
     class LoginBehavior(OneShotBehaviour):
         async def run(self):
-            print("LoginBehavior running")
+            print("LoginBehavior in Client Agent running")
             
             self.username = self.agent.username
             self.user_password = self.agent.user_password
@@ -77,12 +78,13 @@ class ClientAgent(Agent):
 
     class GetAppoinmentsTimesBehavior(OneShotBehaviour):
         async def run(self):
-            print("GetAppoinmentsTimesBehavior running")
+            print("GetAppoinmentsTimesBehavior in Client Agent running")
             msg = Message(to="scheduler@localhost")     # Instantiate the message
-            msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
+            # msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
+            # msg.set_metadata("action", "get_appoinments_times")  
             
             msg.body = json.dumps({
-            "type": "test"
+            "appoinment_type": self.agent.appoinment_type
             })                    
 
             await self.send(msg)
@@ -97,7 +99,7 @@ class ClientAgent(Agent):
 
     class SetAppoinmentBehavior(OneShotBehaviour):
         async def run(self):
-            print("SetAppoinmentBehavior running")
+            print("SetAppoinmentBehavior in Client Agent running")
             msg = Message(to="scheduler@localhost")     # Instantiate the message
             msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
 
