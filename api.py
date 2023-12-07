@@ -4,7 +4,7 @@ import subprocess
 import sys
 from models import *
 from pydantic import BaseModel, EmailStr
-
+from fastapi.responses import JSONResponse
 
 # config logging
 import logging
@@ -40,8 +40,11 @@ async def register_user(user: User):
     output = subprocess.check_output(["python", "main.py", "--register", username, email, phone, password])
     result = output.splitlines()[-1].decode("utf-8")
 
-
-    return {"result": result}
+    # return 200 code if the user registered successfully otherwise return 500 code
+    if "Registered new user:" in result:
+        return JSONResponse(content={"message": "User Registered"}, status_code=200)
+    else:
+        return JSONResponse(content={"message": "User Registeration Failed"}, status_code=400)
 
 
 
@@ -58,11 +61,26 @@ async def login(login_data: LoginData):
     output = subprocess.check_output(["python", "main.py", "--login", username, password])
     result = output.splitlines()[-1].decode("utf-8")
 
+    if "logged in" in result:
+        return JSONResponse(content={"message": "User Logged in"}, status_code=200)
+    else:
+        return JSONResponse(content={"message": "User login Failed"}, status_code=400)
+
+
+
+# if the request body is empty, the request will return all the appointments times otherwise search for the specific type
+@app.post("/appointments")
+async def get_appointments_times():
+    # check if the request body is empty
+    if not request.body:
+        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times"])
+    else:
+        # get the type from the request body
+        data = json.loads(request.body)
+        type = data["type"]
+        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
+
     return {"result": result}
-
-
-
-
 
 
 # Define a root for reading from the database
