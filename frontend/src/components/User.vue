@@ -79,49 +79,9 @@
           label="Reseve New Time"
           class="q-my-md"
           color="secondary"
-          @click="showPopup = true"
+          @click="goToScheduler"
         />
       </div>
-
-      <q-dialog v-model="showPopup">
-        <q-card style="padding: 2rem">
-          <q-card-section>
-            <div style="font-weight: bolder; font-size: 1.7em; margin: 40px 0">
-              Please select the doctor types
-            </div>
-            <q-btn-dropdown
-              color="primary"
-              :label="selectedOption ? selectedOption : 'Default Value'"
-              :disable="disableDropdown"
-              style="width: 100%; margin-bottom: 20px"
-            >
-              <q-list>
-                <q-item
-                  clickable
-                  v-close-popup
-                  v-for="option in options"
-                  :key="option.label"
-                  @click="onItemClick(option)"
-                >
-                  <q-item-section>
-                    <q-item-label>{{ option.label }}</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </q-list>
-            </q-btn-dropdown>
-          </q-card-section>
-
-          <q-card-actions align="center">
-            <q-btn outline label="Cancel" color="red" v-close-popup />
-            <q-btn
-              outline
-              label="Submit"
-              color="primary"
-              @click="submitSelection"
-            />
-          </q-card-actions>
-        </q-card>
-      </q-dialog>
 
       <div
         style="
@@ -171,13 +131,6 @@ export default {
     const showPopup = ref(false);
     const selectedOption = ref("");
 
-    const options = [
-      { label: "Option 1" },
-      { label: "Option 2" },
-      { label: "Option 3" },
-      { label: "Option 4" },
-    ];
-
     const userInfo = ref({
       name: "zahra",
       username: "name",
@@ -200,30 +153,18 @@ export default {
       selectedOption.value = option.label;
     }
 
-    function submitSelection() {
-      // print id
-      console.log(selectedOption.value);
-      if (selectedOption.value) {
-        router.push("/schedule");
-        showPopup.value = false;
-      } else {
-        Notify.create({
-          color: "negative",
-          message: "Please select an option before submitting.",
-          icon: "error",
-        });
-      }
+    function goToScheduler() {
+      router.push("/schedule");
     }
 
     return {
       userInfo,
       onLogout,
       doctors,
-      submitSelection,
       showPopup,
       selectedOption,
-      options,
       onItemClick,
+      goToScheduler,
     };
   },
 };
