@@ -161,11 +161,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import { ref, inject } from "vue";
-=======
-import { ref } from "vue";
->>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 import { useRouter } from "vue-router";
 import { Notify } from "quasar";
 
@@ -174,10 +170,7 @@ export default {
     const router = useRouter();
     const showPopup = ref(false);
     const selectedOption = ref("");
-<<<<<<< HEAD
     const sharedState = inject("sharedState");
-=======
->>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 
     const options = [
       { label: "Option 1" },
@@ -194,11 +187,8 @@ export default {
     });
 
     const onLogout = () => {
-<<<<<<< HEAD
       sharedState.isUserLoggedIn = false;
       localStorage.removeItem("isUserLoggedIn");
-=======
->>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
       router.replace("/login");
     };
 
