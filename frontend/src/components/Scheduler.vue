@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md q-mx-md">
     <div class="row justify-between q-mx-lg">
-      <h4 class="text-left q-pt-lg">Appointment Scheduler</h4>
+      <h4 class="text-left q-pt-lg belkeryBlueColor">Appointment Scheduler</h4>
       <div class="q-py-auto q-my-auto row justify-between">
         <div class="q-pa-md" style="min-width: 300px">
           <div class="q-gutter-md">
@@ -68,6 +68,7 @@
 <script>
 import { ref, computed, nextTick, toRaw } from "vue";
 import { Notify } from "quasar";
+import { useRouter } from "vue-router";
 import { format } from 'date-fns';
 
 export default {
@@ -75,6 +76,7 @@ export default {
     const tableRef = ref(null);
     const navigationActive = ref(false);
     const pagination = ref({});
+    const router = useRouter();
     const selected = ref([]);
     const options = ref([
       "Medical",
@@ -92,6 +94,15 @@ export default {
         label: "Health Care Provider Name",
         align: "left",
         field: (row) => row.name,
+        format: (val) => `${val}`,
+        sortable: true,
+      },
+      {
+        name: "type",
+        required: true,
+        label: "Type",
+        align: "left",
+        field: (row) => row.type,
         format: (val) => `${val}`,
         sortable: true,
       },
@@ -121,60 +132,70 @@ export default {
         name: "Frozen Yogurt",
         date: "1998-05-15",
         time: "14:30:00",
+        type: "Physiotherapy",
       },
       {
         id: 2,
         name: "Ice cream sandwich",
         date: "1990-05-15",
         time: "16:30:00",
+        type: "Chiropractic",
       },
       {
         id: 3,
         name: "Eclair",
         date: "1993-05-15",
         time: "12:30:00",
+        type: "Therapy",
       },
       {
         id: 4,
         name: "Cupcake",
         date: "1990-05-15",
         time: "12:30:00",
+        type: "Chiropractic",
       },
       {
         id: 5,
         name: "Gingerbread",
         date: "1990-05-15",
         time: "10:50:00",
+        type: "Medical",
       },
       {
         id: 6,
         name: "Jelly bean",
         date: "1990-05-15",
         time: "14:30:00",
+        type: "Chiropractic",
       },
       {
         id: 7,
         name: "Lollipop",
         date: "1990-05-15",
         time: "19:30:00",
+        type: "Medical",
       },
       {
         id: 8,
         name: "Honeycomb",
         date: "1990-05-15",
         time: "10:30:00",
+        type: "Physiotherapy",
       },
       {
         id: 9,
         name: "Donut",
         date: "1990-05-15",
         time: "15:30:00",
+        type: "Therapy",
       },
       {
         id: 10,
         name: "KitKat",
         date: "1990-05-15",
         time: "14:30:00",
+        type: "Medical",
       },
     ]);
 
@@ -268,12 +289,15 @@ export default {
       console.log(selected.value[0].id);
       // server and redirect to the user
       if (selected.value[0].id) {
+        
         Notify.create({
           color: "positive",
           message: "successful",
           icon: "check",
           position: "center",
         });
+        router.replace("/user");
+        
       } else {
         Notify.create({
           color: "negative",

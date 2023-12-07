@@ -5,11 +5,11 @@
       style="padding: 2rem 0"
     >
       <q-card class="my-card" style="width: 90vw; margin-bottom: 15px;">
-        <q-card-section class="bg-primary text-white">
-          <div class="text-h6">User Profile</div>
+        <q-card-section class="text-white" style="background-color: var(--airBlue);">
+          <div class="text-h6 belkeryBlueColor">Your Profile</div>
         </q-card-section>
 
-        <q-card-section class="card-container">
+        <q-card-section class="card-container" style="background-color: var(--blueHoneyDoo);">
           <div class="q-mb-md" style="flex: 3">
             <q-avatar size="70px" class="q-mb-md">
               <img src="@/assets/user.png" alt="avatar" />
@@ -61,34 +61,35 @@
           </div>
         </q-card-section>
 
-        <q-card-section>
-          <q-btn
+      </q-card>
+
+      <div class="row justify-between" style="min-width: 90%;">
+        <div>
+        <q-btn
+          label="Reseve New Time"
+          class="green-btn"
+          @click="goToScheduler"
+        />
+        </div>
+        <div>
+        <q-btn
             flat
             label="Logout"
             icon="logout"
             @click="onLogout"
-            class="q-ml-md"
-            color="negative"
-          />
-        </q-card-section>
-      </q-card>
-
-      <div>
-        <q-btn
-          label="Reseve New Time"
-          class="q-my-md"
-          color="secondary"
-          @click="goToScheduler"
+            class="light-red-btn q-py-auto"
         />
+        </div>
       </div>
 
       <div
         style="
           width: 90vw;
           margin: 20px 0;
-          border: 4px solid gray;
+          border: 4px solid var(--mintGreen);
           border-radius: 5px;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 4px var(--mintGreen);
+          background: var(--honeyDoo);
           padding-bottom: 20px;
         "
       >

@@ -5,7 +5,7 @@
   <q-layout>
     <q-header
       elevated
-      style="background: rgb(87 107 164); height: 10vh; display: flex"
+      style="background: var(--airBlue); height: 10vh; display: flex"
     >
       <q-toolbar>
         <q-btn flat dense round icon="home" to="/" style="padding-left: 5px;"/>
@@ -27,32 +27,35 @@
       <router-view />
     </div>
 
-    <div class="footer">
-      <p style="display: inline-block; margin-right: 20px">
-        &copy; 2023 The Application. All rights reserved.
-      </p>
-      <q-btn label="About Us" color="secondary" @click="open()" />
-      <q-dialog v-model="dialog" position="bottom">
-        <q-card style="width: 350px; background: #a2d0d3">
-          <q-card-section class="row items-center no-wrap">
-            <div>
-              <div
-                class="text-weight-bold"
-                style="margin: 10px 0; font-size: large"
-              >
-                Group7:
-              </div>
-              <ls class="text-black">
-                <li style="padding-left: 20px">Zahra Arabi</li>
-                <li style="padding-left: 20px">Mahboobeh</li>
-                <li style="padding-left: 20px">Sara</li>
-                <li style="padding-left: 20px">ah</li>
-              </ls>
-            </div>
-          </q-card-section>
-        </q-card>
+    <q-footer elevated
+    style="background: var(--salmonPink); height: 6vh; display: flex">
+        <q-toolbar>
+          <p style="display: inline-block; margin-left: 40%" class="q-my-auto">
+            &copy; 2023 The Application. All rights reserved.
+          </p>
+          <q-btn class="q-mx-lg light-red-btn" label="About Us"  @click="open()" />
+          <q-dialog v-model="dialog" position="bottom">
+            <q-card style="width: 350px; background: #a2d0d3">
+              <q-card-section class="row items-center no-wrap">
+                <div>
+                  <div
+                    class="text-weight-bold"
+                    style="margin: 10px 0; font-size: large"
+                  >
+                    Group7:
+                  </div>
+                  <ls class="text-black">
+                    <li style="padding-left: 20px">Zahra Arabi</li>
+                    <li style="padding-left: 20px">Mahboobeh</li>
+                    <li style="padding-left: 20px">Sara</li>
+                    <li style="padding-left: 20px">ah</li>
+                  </ls>
+                </div>
+              </q-card-section>
+            </q-card>
       </q-dialog>
-    </div>
+        </q-toolbar>
+      </q-footer>
   </q-layout>
 </template>
 

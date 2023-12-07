@@ -3,8 +3,8 @@
     <q-page-container class="flex flex-center q-page-class q-p-xl">
       <div class="text-center">
         <div class="q-my-md">
-          <q-avatar size="10rem">
-            <img src="@/assets/vue.svg" alt="logo" />
+          <q-avatar size="15rem">
+            <img src="@/assets/logo.jpeg" alt="logo" />
           </q-avatar>
         </div>
         <div class="q-px-xl">
