@@ -16,7 +16,11 @@
         <q-space />
 
         <div style="padding-right: 20px">
+<<<<<<< HEAD
           <router-link v-if="sharedState.isUserLoggedIn" to="/user" class="avatar-link">
+=======
+          <router-link v-if="isUserLoggedIn" to="/user" class="avatar-link">
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
             <q-avatar icon="account_circle" size="70px"></q-avatar>
           </router-link>
         </div>
@@ -53,21 +57,29 @@
         </q-card>
       </q-dialog>
     </div>
+<<<<<<< HEAD
 
     <!-- <div>
       <button @click="fetchData">Get Data</button>
     </div> -->
+=======
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
   </q-layout>
 </template>
 
 <script>
+<<<<<<< HEAD
 import { ref, reactive, provide } from "vue";
 // import axios from "axios";
+=======
+import { ref } from "vue";
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 
 export default {
   setup() {
     const dialog = ref(false);
     const position = ref("bottom");
+<<<<<<< HEAD
 
     const sharedState = reactive({
       isUserLoggedIn: localStorage.getItem('isUserLoggedIn') ? localStorage.getItem('isUserLoggedIn') : false
@@ -84,15 +96,26 @@ export default {
     //     console.error("There was an error!", error);
     //   }
     // }
+=======
+    const isUserLoggedIn = ref(true);
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 
     return {
       dialog,
       position,
+<<<<<<< HEAD
       sharedState,
 
       open() {
         dialog.value = true;
       }
+=======
+      isUserLoggedIn,
+
+      open() {
+        dialog.value = true;
+      },
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
     };
   },
 };

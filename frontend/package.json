@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.9",
+<<<<<<< HEAD
     "axios": "^1.6.2",
+=======
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
     "quasar": "^2.14.1",
     "vite": "^5.0.5",
     "vue": "^3.3.8",

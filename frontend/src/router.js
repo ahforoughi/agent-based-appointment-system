@@ -5,10 +5,13 @@ import Register from "@/components/Register.vue";
 import User from "@/components/User.vue";
 import Scheduler from "@/components/Scheduler.vue";
 
+<<<<<<< HEAD
 function isLoggedIn() {
     return !!localStorage.getItem('isUserLoggedIn');
 }
 
+=======
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 const routes = [{
     path: "/",
     name: "LandingPage",
@@ -18,6 +21,7 @@ const routes = [{
     path: "/login",
     name: "Login",
     component: Login,
+<<<<<<< HEAD
     beforeEnter: (to, from, next) => {
         if (isLoggedIn()) {
             next('/user'); // Redirect to the user page or another appropriate route
@@ -25,6 +29,8 @@ const routes = [{
             next(); // Proceed to login page
         }
     }
+=======
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 },
 {
     path: "/register",
@@ -35,6 +41,7 @@ const routes = [{
     path: "/user",
     name: "User",
     component: User,
+<<<<<<< HEAD
     beforeEnter: (to, from, next) => {
         if (isLoggedIn()) {
             next();
@@ -42,16 +49,25 @@ const routes = [{
             next('/login');
         }
     }
+=======
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
 },
 {
     path: "/schedule",
     name: "Scheduler",
     component: Scheduler,
     beforeEnter: (to, from, next) => {
+<<<<<<< HEAD
         if (isLoggedIn()) {
             next();
         } else {
             next('/login');
+=======
+        if (true) {
+            next();
+        } else {
+            next('/user');
+>>>>>>> f1abda14fb93aa4355ff7e93eb5da528410905cb
         }
     }
 }
