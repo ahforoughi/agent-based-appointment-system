@@ -1,11 +1,4 @@
 import spade
-from spade.agent import Agent
-from spade.behaviour import OneShotBehaviour
-from spade.message import Message
-from spade.template import Template
-import json
-from models import User, SessionLocal
-from sqlalchemy.orm import Session
 from agents.registeration_agent import RegisterationAgent
 from agents.client_agent import ClientAgent
 from agents.login_agent import LoginAgent

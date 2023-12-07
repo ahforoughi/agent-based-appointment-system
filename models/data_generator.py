@@ -1,11 +1,11 @@
 import json
-from temp import Patient, Doctor, Appointment, SessionLocal
+from models import Patient, Doctor, Appointment, SessionLocal
 
 # Create sample data for patients
 patients_data = [
     {
         "username": "jerry_houston",
-        "password": "jerry123",
+        "user_password": "jerry123",
         "first_name": "Jerry",
         "last_name": "Houston",
         "email": "jerry.houston@ucalgary.ca",
@@ -14,7 +14,7 @@ patients_data = [
     },
     {
         "username": "amber_lowe",
-        "password": "amber321",
+        "user_password": "amber321",
         "first_name": "Amber",
         "last_name": "Lowe",
         "email": "amber.lowe@example.com",

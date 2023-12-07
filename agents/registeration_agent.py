@@ -3,7 +3,7 @@ from spade.behaviour import OneShotBehaviour, CyclicBehaviour
 from spade.message import Message
 from spade.template import Template
 import json
-from models import User, SessionLocal
+from models import Patient, Doctor, Appointment, SessionLocal
 from sqlalchemy.orm import Session
 
 
@@ -31,11 +31,11 @@ class RegisterationAgent(Agent):
                 db: Session = SessionLocal()
 
                 # Check if user exists
-                if db.query(User).filter(User.username == username).first():
+                if db.query(Patient).filter(Patient.username == username).first():
                     print(f"User {username} already exists.")
                 else:
                     # Register new user
-                    new_user = User(username=username, user_password=user_password, email=email, phone=phone)
+                    new_user = Patient(username=username, user_password=user_password, email=email, phone=phone)
                     db.add(new_user)
                     db.commit()
                     print(f"Registered new user: {username}")

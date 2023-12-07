@@ -1,1 +1,1 @@
-from models.models import User, SessionLocal
+from models.models import Patient, Doctor, Appointment, SessionLocal
