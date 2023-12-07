@@ -12,6 +12,18 @@
     >
       You can select your appropriate appointment.
     </h6>
+
+    <div class="q-pa-md" style="max-width: 300px">
+
+      <div class="q-gutter-md">
+        <q-select rounded outlined
+        v-model="selected_appointment_type" :options="options" 
+        label="appointment_type"
+        input-class="custom-select-input"
+        option-class="custom-option" />
+      </div>
+    </div>
+
     <q-table
       flat
       bordered
@@ -130,16 +142,26 @@ const rows = [
     name: "KitKat",
     day: 518,
   },
+
 ];
 
+
 export default {
+  data() {
+    return {
+      selected_appointment_type: null,
+
+    };
+  },
   setup() {
     const tableRef = ref(null);
 
     const navigationActive = ref(false);
     const pagination = ref({});
     const selected = ref([]);
-
+    const options = ref( [
+        'Medical', 'Therapy', 'Chiropractic', 'Physiotherapy', 'test', 'test2'
+      ]);
     const filter = ref("");
 
     function onKey(evt) {
@@ -269,7 +291,8 @@ export default {
       columns,
       rows,
       onKey,
-      addAppointment
+      addAppointment,
+      options
     };
   },
 };
