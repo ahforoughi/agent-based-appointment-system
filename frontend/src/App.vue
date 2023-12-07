@@ -10,7 +10,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" to="/" />
         <q-toolbar-title style="padding-left: 40px; text-align: left">
-          Application Name
+          WellBookUofC
         </q-toolbar-title>
 
         <q-space />
