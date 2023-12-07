@@ -2,10 +2,7 @@ import spade
 from spade.agent import Agent
 from spade.behaviour import OneShotBehaviour, CyclicBehaviour
 from spade.message import Message
-from spade.template import Template
 import json
-from models import User, SessionLocal
-from sqlalchemy.orm import Session
 
 
 class ClientAgent(Agent):
@@ -132,7 +129,7 @@ class ClientAgent(Agent):
         elif self.behavior == "set_appoinment":
             self.set_appoinment_behavior = self.SetAppoinmentBehavior()
             self.add_behaviour(self.set_appoinment_behavior)
-        elif self.behavior == "register"    :   
+        elif self.behavior == "register":   
             self.registeration_behavior = self.RegisterationBehavior()
             self.add_behaviour(self.registeration_behavior)
 

@@ -4,7 +4,7 @@ from spade.behaviour import OneShotBehaviour, CyclicBehaviour
 from spade.message import Message
 from spade.template import Template
 import json
-from models import User, SessionLocal
+from models import Patient, SessionLocal
 from sqlalchemy.orm import Session
 
 
@@ -31,7 +31,7 @@ class LoginAgent(Agent):
                 db: Session = SessionLocal()
 
                 # check for user in database and return user id if exists or None if not exists 
-                user = db.query(User).filter(User.username == username).first()
+                user = db.query(Patient).filter(Patient.username == username).first()
                 if user:
                     if user.user_password == user_password:
                         print(f"User {username} logged in.")
