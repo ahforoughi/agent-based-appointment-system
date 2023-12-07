@@ -1,7 +1,7 @@
 <template>
-<q-layout class="row justify-center items-center q-pa-md" style="min-height: 80vh">
+<q-layout class="row justify-center items-center q-pa-md" style="min-height: 650px">
   <q-page-container >
-    <q-card class="my-card q-pa-md" style="max-width: 400px;">
+    <q-card class="my-card q-pa-md" style="max-width: 500px;">
       <q-card-section class="q-pb-none">
         <div class="text-h5 text-center q-mb-md">Sign Up</div>
         <q-form @submit.prevent="onSubmit">

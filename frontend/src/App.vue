@@ -8,7 +8,7 @@
       style="background: rgb(87 107 164); height: 10vh; display: flex"
     >
       <q-toolbar>
-        <q-btn flat dense round icon="menu" to="/" />
+        <q-btn flat dense round icon="home" to="/" style="padding-left: 5px;"/>
         <q-toolbar-title style="padding-left: 40px; text-align: left">
           WellBookUofC
         </q-toolbar-title>

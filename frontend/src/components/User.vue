@@ -1,11 +1,10 @@
 <template>
   <q-layout>
     <q-page-container
-      padding
       class="flex flex-center"
-      style="padding-top: 2rem"
+      style="padding: 2rem 0"
     >
-      <q-card class="my-card" style="width: 90vw">
+      <q-card class="my-card" style="width: 90vw; margin-bottom: 15px;">
         <q-card-section class="bg-primary text-white">
           <div class="text-h6">User Profile</div>
         </q-card-section>
