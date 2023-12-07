@@ -4,6 +4,7 @@ import subprocess
 import sys
 from models import *
 from pydantic import BaseModel, EmailStr
+from fastapi.middleware.cors import CORSMiddleware
 
 
 # config logging
@@ -14,10 +15,17 @@ logger = logging.getLogger(__name__)
 
 # Create an instance of the FastAPI class
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define a root `/` endpoint
 @app.get("/")
-async def root():
+def root():
+    logger.info("in root")
     return {"message": "Hello World"}
 
 
@@ -59,8 +67,6 @@ async def login(login_data: LoginData):
     result = output.splitlines()[-1].decode("utf-8")
 
     return {"result": result}
-
-
 
 
 

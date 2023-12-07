@@ -5,6 +5,10 @@ import Register from "@/components/Register.vue";
 import User from "@/components/User.vue";
 import Scheduler from "@/components/Scheduler.vue";
 
+function isLoggedIn() {
+    return !!localStorage.getItem('isUserLoggedIn');
+}
+
 const routes = [{
     path: "/",
     name: "LandingPage",
@@ -14,6 +18,13 @@ const routes = [{
     path: "/login",
     name: "Login",
     component: Login,
+    beforeEnter: (to, from, next) => {
+        if (isLoggedIn()) {
+            next('/user'); // Redirect to the user page or another appropriate route
+        } else {
+            next(); // Proceed to login page
+        }
+    }
 },
 {
     path: "/register",
@@ -24,16 +35,23 @@ const routes = [{
     path: "/user",
     name: "User",
     component: User,
+    beforeEnter: (to, from, next) => {
+        if (isLoggedIn()) {
+            next();
+        } else {
+            next('/login');
+        }
+    }
 },
 {
     path: "/schedule",
     name: "Scheduler",
     component: Scheduler,
     beforeEnter: (to, from, next) => {
-        if (true) {
+        if (isLoggedIn()) {
             next();
         } else {
-            next('/user');
+            next('/login');
         }
     }
 }
