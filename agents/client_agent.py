@@ -6,7 +6,9 @@ import json
 
 
 class ClientAgent(Agent):
-    def __init__(self, jid, password, behavior, firstname=None, lastname=None, username=None, phone=None, user_password=None, appoinment_type=None):
+    def __init__(self, jid, password, behavior, 
+                 firstname=None, lastname=None, username=None, phone=None, user_password=None, 
+                 appoinment_type=None, appoinment_id=None):
         print("ClientAgent init")
         super().__init__(jid, password)
 
@@ -17,6 +19,7 @@ class ClientAgent(Agent):
         self.phone = phone
         self.user_password = user_password
         self.appoinment_type = appoinment_type
+        self.appoinment_id = appoinment_id
     
 
     
@@ -84,7 +87,7 @@ class ClientAgent(Agent):
             print("GetAppoinmentsTimesBehavior in Client Agent running")
             msg = Message(to="scheduler@localhost")     # Instantiate the message
             # msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
-            # msg.set_metadata("action", "get_appoinments_times")  
+            msg.set_metadata("action", "get_appoinments_times")  
             
             msg.body = json.dumps({
             "appoinment_type": self.agent.appoinment_type
@@ -103,14 +106,35 @@ class ClientAgent(Agent):
     class SetAppoinmentBehavior(OneShotBehaviour):
         async def run(self):
             print("SetAppoinmentBehavior in Client Agent running")
+            
             msg = Message(to="scheduler@localhost")     # Instantiate the message
             msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
 
             msg.body = json.dumps({
-            "type": "test"
+            "appoinment_id": self.agent.appoinment_id
             })
             msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
             msg.set_metadata("language", "OWL-S")       # Set the language of the message content
+
+            await self.send(msg)
+            print("Message sent!")
+
+            # set exit_code for the behaviour
+            self.exit_code = "Job Finished!"
+
+            # stop agent from behaviour
+            await self.agent.stop()
+
+    class SendEmailBehavior(OneShotBehaviour):
+        async def run(self):
+            print("SendEmailBehavior in Client Agent running")
+            
+            msg = Message(to="email@localhost")     # Instantiate the message
+            # msg.set_metadata("performative", "request")
+
+            msg.body = json.dumps({
+            "username": self.agent.username
+            })
 
             await self.send(msg)
             print("Message sent!")
@@ -137,8 +161,9 @@ class ClientAgent(Agent):
         elif self.behavior == "register":   
             self.registeration_behavior = self.RegisterationBehavior()
             self.add_behaviour(self.registeration_behavior)
-
-
+        elif self.behavior == "send_email":
+            self.send_email_behavior = self.SendEmailBehavior()
+            self.add_behaviour(self.send_email_behavior)
 
 
 
