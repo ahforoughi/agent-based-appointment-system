@@ -16,7 +16,7 @@
         <q-space />
 
         <div style="padding-right: 20px">
-          <router-link v-if="isUserLoggedIn" to="/user" class="avatar-link">
+          <router-link v-if="sharedState.isUserLoggedIn" to="/user" class="avatar-link">
             <q-avatar icon="account_circle" size="70px"></q-avatar>
           </router-link>
         </div>
@@ -53,26 +53,46 @@
         </q-card>
       </q-dialog>
     </div>
+
+    <!-- <div>
+      <button @click="fetchData">Get Data</button>
+    </div> -->
   </q-layout>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, reactive, provide } from "vue";
+// import axios from "axios";
 
 export default {
   setup() {
     const dialog = ref(false);
     const position = ref("bottom");
-    const isUserLoggedIn = ref(true);
+
+    const sharedState = reactive({
+      isUserLoggedIn: localStorage.getItem('isUserLoggedIn') ? localStorage.getItem('isUserLoggedIn') : false
+    });
+
+    provide('sharedState', sharedState);
+    console.log(localStorage.getItem('isUserLoggedIn'))
+
+    // async function fetchData() {
+    //   try {
+    //     const response = await axios.get("http://localhost:8000/");
+    //     console.log(response);
+    //   } catch (error) {
+    //     console.error("There was an error!", error);
+    //   }
+    // }
 
     return {
       dialog,
       position,
-      isUserLoggedIn,
+      sharedState,
 
       open() {
         dialog.value = true;
-      },
+      }
     };
   },
 };
