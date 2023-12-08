@@ -49,6 +49,16 @@ class SchedulerAgent(Agent):
 
                 else:
                     print(f"Getting appointments times for type: {appoinment_type}")
+                    # like the previous if statement but with the type
+                    # code:
+                    appointments = db.query(Appointment).filter(Appointment.type == appoinment_type).all()
+                    appointments_times = []
+                    for appointment in appointments:
+                        appointments_times.append({
+                            "doctor_specilization": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().specialization,
+                            "doctor_name": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().first_name,
+                            "time": appointment.time
+                        })
             
             except Exception as e:
                 print(f"An error occurred: {e}")

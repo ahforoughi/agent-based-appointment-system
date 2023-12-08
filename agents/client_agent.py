@@ -6,13 +6,14 @@ import json
 
 
 class ClientAgent(Agent):
-    def __init__(self, jid, password, behavior, username=None, email=None, phone=None, user_password=None, appoinment_type=None):
+    def __init__(self, jid, password, behavior, firstname=None, lastname=None, username=None, phone=None, user_password=None, appoinment_type=None):
         print("ClientAgent init")
         super().__init__(jid, password)
 
         self.behavior = behavior
+        self.firstname = firstname
+        self.lastname = lastname
         self.username = username
-        self.email = email
         self.phone = phone
         self.user_password = user_password
         self.appoinment_type = appoinment_type
@@ -22,8 +23,9 @@ class ClientAgent(Agent):
     class RegisterationBehavior(OneShotBehaviour):
         async def run(self):
             # get the attributes from the ClientAgent class
+            self.firstname = self.agent.firstname
+            self.lastname = self.agent.lastname
             self.username = self.agent.username
-            self.email = self.agent.email
             self.phone = self.agent.phone
             self.user_password = self.agent.user_password
             
@@ -34,9 +36,10 @@ class ClientAgent(Agent):
             msg.set_metadata("language", "OWL-S")       # Set the language of the message content
             
             msg.body = json.dumps({
+            "firstname": self.firstname,
+            "lastname": self.lastname,
             "username": self.username,
             "user_password": self.user_password,
-            "email": self.email,
             "phone": self.phone
             })                    
 

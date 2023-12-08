@@ -32,12 +32,14 @@ class User(BaseModel):
 # Define a root `/register` endpoint which receives `username`, `email`, `phone` and `password` parameters
 @app.post("/register")
 async def register_user(user: User):
+    firstname = user.firstname
+    lastname = user.lastname
     username = user.username
-    email = user.email
     phone = user.phone
     password = user.password
 
-    output = subprocess.check_output(["python", "main.py", "--register", username, email, phone, password])
+    output = subprocess.check_output(["python", "main.py", "--register", 
+                                    firstname, lastname, username, email, phone, password])
     result = output.splitlines()[-1].decode("utf-8")
 
     # return 200 code if the user registered successfully otherwise return 500 code
@@ -61,8 +63,23 @@ async def login(login_data: LoginData):
     output = subprocess.check_output(["python", "main.py", "--login", username, password])
     result = output.splitlines()[-1].decode("utf-8")
 
+    # retrive the user info from the database
+    db: Session = SessionLocal()
+    user = db.query(Patient).filter(Patient.username == username).first()
+    db.close()
+
+    # create the json response from the user info
+    user_info = {
+        "username": user.username,
+        "phone": user.phone,
+        "firstname": user.first_name,
+        "lastname": user.last_name,
+    }
+
+    print(result)
+    
     if "logged in" in result:
-        return JSONResponse(content={"message": "User Logged in"}, status_code=200)
+        return JSONResponse(content={"message": "User Logged in", "user_info": user_info}, status_code=200)
     else:
         return JSONResponse(content={"message": "User login Failed"}, status_code=400)
 
