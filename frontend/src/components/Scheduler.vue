@@ -31,6 +31,7 @@
     </div>
     <q-table
       class="q-mx-lg"
+      style="background-color: var(--chamRed);"
       flat
       bordered
       ref="tableRef"

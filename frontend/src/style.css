@@ -19,7 +19,8 @@
   --rustyRed: #D13440;
   --red: #E63946;
   --lightCoral: #E96A70;
-  --paleDogwood : #EFCAC4;
+  --paleDogwood : #EBCBC6;
+  --chamRed: #EEEFF2;
   --honeyDoo: #F1FAEE;
   --blueHoneyDoo: #DFF2EA;
   --mintGreen: #CDEAE5;
@@ -27,6 +28,7 @@
   --cerBlue: #457B9D;
   --asparagous: #7E9971;
   --pistachio: #BFD37D;
+  --shamrockGreen: #559972;
 }
 
 a {
@@ -107,7 +109,7 @@ button:focus-visible {
 }
 
 .green-btn {
-  background-color: var(--asparagous)!important;
+  background-color: var(--shamrockGreen)!important;
   color:var(--honeyDoo) !important; /* Adjust text color for better visibility */
 }
 

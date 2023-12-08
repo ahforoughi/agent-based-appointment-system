@@ -11,8 +11,8 @@
 
         <q-card-section class="card-container" style="background-color: var(--blueHoneyDoo);">
           <div class="q-mb-md" style="flex: 3">
-            <q-avatar size="70px" class="q-mb-md">
-              <img src="@/assets/user.png" alt="avatar" />
+            <q-avatar size="6rem" class="q-mb-md">
+              <img src="@/assets/th.jpeg" alt="avatar" />
             </q-avatar>
             <div class="text-h6">{{ userInfo.name }}</div>
           </div>
@@ -102,7 +102,7 @@
             font-size: 1.5em;
           "
         >
-          List of All Doctors and Reservations
+          Following appointments
         </q-item-label>
 
         <div v-for="doctor in doctors" :key="doctor.id">
