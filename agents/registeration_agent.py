@@ -22,10 +22,11 @@ class RegisterationAgent(Agent):
 
             try:
                 data = json.loads(msg.body)
-
+                
+                firstname = data["firstname"]
+                lastname = data["lastname"]
                 username = data["username"]
                 user_password = data["user_password"]
-                email = data["email"]
                 phone = data["phone"]
 
                 db: Session = SessionLocal()
@@ -35,7 +36,7 @@ class RegisterationAgent(Agent):
                     print(f"User {username} already exists.")
                 else:
                     # Register new user
-                    new_user = Patient(username=username, user_password=user_password, email=email, phone=phone)
+                    new_user = Patient(first_name=firstname, last_name=lastname, username=username, user_password=user_password, phone=phone)
                     db.add(new_user)
                     db.commit()
                     print(f"Registered new user: {username}")
