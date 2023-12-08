@@ -1,19 +1,18 @@
 <template>
   <q-layout>
     <q-page-container
-      padding
       class="flex flex-center"
-      style="padding-top: 2rem"
+      style="padding: 2rem 0"
     >
-      <q-card class="my-card" style="width: 90vw">
-        <q-card-section class="bg-primary text-white">
-          <div class="text-h6">User Profile</div>
+      <q-card class="my-card" style="width: 90vw; margin-bottom: 15px;">
+        <q-card-section class="text-white" style="background-color: var(--airBlue);">
+          <div class="text-h6 belkeryBlueColor">Your Profile</div>
         </q-card-section>
 
-        <q-card-section class="card-container">
+        <q-card-section class="card-container" style="background-color: var(--blueHoneyDoo);">
           <div class="q-mb-md" style="flex: 3">
-            <q-avatar size="70px" class="q-mb-md">
-              <img src="@/assets/user.png" alt="avatar" />
+            <q-avatar size="6rem" class="q-mb-md">
+              <img src="@/assets/th.jpeg" alt="avatar" />
             </q-avatar>
             <div class="text-h6">{{ userInfo.name }}</div>
           </div>
@@ -62,74 +61,35 @@
           </div>
         </q-card-section>
 
-        <q-card-section>
-          <q-btn
+      </q-card>
+
+      <div class="row justify-between" style="min-width: 90%;">
+        <div>
+        <q-btn
+          label="Reseve New Time"
+          class="green-btn"
+          @click="goToScheduler"
+        />
+        </div>
+        <div>
+        <q-btn
             flat
             label="Logout"
             icon="logout"
             @click="onLogout"
-            class="q-ml-md"
-            color="negative"
-          />
-        </q-card-section>
-      </q-card>
-
-      <div>
-        <q-btn
-          label="Reseve New Time"
-          class="q-my-md"
-          color="secondary"
-          @click="showPopup = true"
+            class="light-red-btn q-py-auto"
         />
+        </div>
       </div>
-
-      <q-dialog v-model="showPopup">
-        <q-card style="padding: 2rem">
-          <q-card-section>
-            <div style="font-weight: bolder; font-size: 1.7em; margin: 40px 0">
-              Please select the doctor types
-            </div>
-            <q-btn-dropdown
-              color="primary"
-              :label="selectedOption ? selectedOption : 'Default Value'"
-              :disable="disableDropdown"
-              style="width: 100%; margin-bottom: 20px"
-            >
-              <q-list>
-                <q-item
-                  clickable
-                  v-close-popup
-                  v-for="option in options"
-                  :key="option.label"
-                  @click="onItemClick(option)"
-                >
-                  <q-item-section>
-                    <q-item-label>{{ option.label }}</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </q-list>
-            </q-btn-dropdown>
-          </q-card-section>
-
-          <q-card-actions align="center">
-            <q-btn outline label="Cancel" color="red" v-close-popup />
-            <q-btn
-              outline
-              label="Submit"
-              color="primary"
-              @click="submitSelection"
-            />
-          </q-card-actions>
-        </q-card>
-      </q-dialog>
 
       <div
         style="
           width: 90vw;
           margin: 20px 0;
-          border: 4px solid gray;
+          border: 4px solid var(--mintGreen);
           border-radius: 5px;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 4px var(--mintGreen);
+          background: var(--honeyDoo);
           padding-bottom: 20px;
         "
       >
@@ -142,7 +102,7 @@
             font-size: 1.5em;
           "
         >
-          List of All Doctors and Reservations
+          Following appointments
         </q-item-label>
 
         <div v-for="doctor in doctors" :key="doctor.id">
@@ -172,13 +132,6 @@ export default {
     const selectedOption = ref("");
     const sharedState = inject("sharedState");
 
-    const options = [
-      { label: "Option 1" },
-      { label: "Option 2" },
-      { label: "Option 3" },
-      { label: "Option 4" },
-    ];
-
     const userInfo = ref({
       name: "zahra",
       username: "name",
@@ -203,30 +156,18 @@ export default {
       selectedOption.value = option.label;
     }
 
-    function submitSelection() {
-      // print id
-      console.log(selectedOption.value);
-      if (selectedOption.value) {
-        router.push("/schedule");
-        showPopup.value = false;
-      } else {
-        Notify.create({
-          color: "negative",
-          message: "Please select an option before submitting.",
-          icon: "error",
-        });
-      }
+    function goToScheduler() {
+      router.push("/schedule");
     }
 
     return {
       userInfo,
       onLogout,
       doctors,
-      submitSelection,
       showPopup,
       selectedOption,
-      options,
       onItemClick,
+      goToScheduler,
     };
   },
 };

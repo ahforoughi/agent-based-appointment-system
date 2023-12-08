@@ -32,3 +32,5 @@ models/__pycache__/
 agents/__pycache__/
 
 APS.db
+
+venv

@@ -1,76 +1,29 @@
 <template>
-  <q-layout
-    class="row justify-center items-center q-pa-md"
-    style="min-height: 80vh"
-  >
-    <q-page-container>
-      <q-card class="my-card q-pa-md" style="max-width: 400px">
-        <q-card-section class="q-pb-none">
-          <div class="text-h5 text-center q-mb-md">Sign Up</div>
-          <q-form @submit.prevent="onSubmit">
-            <q-input
-              filled
-              v-model="user.name"
-              label="Full Name"
-              lazy-rules
-              :rules="[
-                (val) =>
-                  (val && val.length > 0) || 'Please enter your full name',
-              ]"
-            />
-            <q-input
-              filled
-              v-model="user.email"
-              label="Email"
-              lazy-rules
-              :rules="[
-                (val) => (val && val.length > 0) || 'Please enter your email',
-                (val) =>
-                  /^\S+@\S+\.\S+$/.test(val) || 'Please enter a valid email',
-              ]"
-            />
-            <q-input
-              filled
-              v-model="user.password"
-              type="password"
-              label="Password"
-              lazy-rules
-              :rules="[
-                (val) =>
-                  (val && val.length > 5) ||
-                  'Password should be more than 5 characters',
-              ]"
-            />
-            <q-input
-              filled
-              v-model="user.confirmPassword"
-              type="password"
-              label="Confirm Password"
-              lazy-rules
-              :rules="[
-                (val) => val === user.password || 'Passwords do not match',
-              ]"
-            />
-
-            <div class="q-mt-md">
-              <q-btn label="Register" type="submit" color="primary" stretch :disabled="loading"/>
-            </div>
-          </q-form>
-        </q-card-section>
-
-        <q-card-section>
-          <div class="row justify-center q-mt-md">
-            <q-btn
-              flat
-              label="Already have an account? Login"
-              color="primary"
-              @click="goToLogin"
-            />
+<q-layout class="row justify-center items-center q-pa-md" style="min-height: 650px">
+  <q-page-container style="min-width: 25%;">
+    <q-card class="my-card q-pa-md" style="background: var(--chamRed);">
+      <q-card-section class="q-pb-none">
+        <div class="text-h5 text-center q-mb-md">Sign Up</div>
+        <q-form @submit.prevent="onSubmit">
+          <q-input  class="q-mb-s" filled v-model="user.name" label="Full Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please enter your full name']" />
+          <q-input  class="q-mb-s q-mt-xs" filled v-model="user.email" label="Email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please enter your email', val => /^\S+@\S+\.\S+$/.test(val) || 'Please enter a valid email']" />
+          <q-input class="q-mb-s q-mt-xs" filled v-model="user.password" type="password" label="Password" lazy-rules :rules="[ val => val && val.length > 5 || 'Password should be more than 5 characters']" />
+          <q-input class="q-mt-xs" filled v-model="user.confirmPassword" type="password" label="Confirm Password" lazy-rules :rules="[ val => val === user.password || 'Passwords do not match']" />
+          
+          <div class="q-mt-md">
+            <q-btn label="Register" type="submit" class="blue-btn" stretch />
           </div>
-        </q-card-section>
-      </q-card>
-    </q-page-container>
-  </q-layout>
+        </q-form>
+      </q-card-section>
+
+      <q-card-section>
+        <div class="row justify-center q-mt-md">
+          <q-btn flat label="Already have an account? Login" class="green-btn" @click="goToLogin" />
+        </div>
+      </q-card-section>
+    </q-card>
+  </q-page-container>
+</q-layout>
 </template>
 
 <script>
