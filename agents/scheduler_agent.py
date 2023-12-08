@@ -68,17 +68,17 @@ class SchedulerAgent(Agent):
 
 
 
-    # class SetAppoinment(CyclicBehaviour):
-    #     async def run(self):
-    #         print("SetAppoinment running")
+    class SetAppoinment(CyclicBehaviour):
+        async def run(self):
+            print("SetAppoinment running")
 
-    #         msg = await self.receive(timeout=10)
-    #         if msg:
-    #             print("Message received with content: {}".format(msg.body))
-    #         else:
-    #             print("Did not received any message after 10 seconds")
+            msg = await self.receive(timeout=10)
+            if msg:
+                print("Message received with content: {}".format(msg.body))
+            else:
+                print("Did not received any message after 10 seconds")
 
-    #         await self.agent.stop()
+            await self.agent.stop()
 
 
     
@@ -89,13 +89,13 @@ class SchedulerAgent(Agent):
         receive_times_behavior = self.ReturnAvailableTimes()
         receive_times_template = Template()
         # receive_times_template.set_metadata("performative", "request")
-        # receive_times_template.set_metadata("action", "get_appoinments_times")
+        receive_times_template.set_metadata("action", "get_appoinments_times")
         self.add_behaviour(receive_times_behavior, receive_times_template)
 
-        # print("SetAppoinment added")
-        # set_time_behavior = self.SetAppoinment()
-        # set_time_template = Template()
-        # set_time_template.set_metadata("performative", "request")
-        # self.add_behaviour(set_time_behavior, set_time_template)
+        print("SetAppoinment added")
+        set_time_behavior = self.SetAppoinment()
+        set_time_template = Template()
+        set_time_template.set_metadata("performative", "request")
+        self.add_behaviour(set_time_behavior, set_time_template)
 
 

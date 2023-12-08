@@ -77,7 +77,7 @@ async def login(login_data: LoginData):
     }
 
     print(result)
-    
+
     if "logged in" in result:
         return JSONResponse(content={"message": "User Logged in", "user_info": user_info}, status_code=200)
     else:
@@ -100,6 +100,43 @@ async def get_appointments_times(request: AppointmentType):
         data = json.loads(request.body)
         type = data["type"]
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
+
+    result = output.splitlines()[-1].decode("utf-8")
+    print(result)
+    # return result
+    # return the output as json 
+    return JSONResponse(content=json.dumps(result), status_code=200)
+
+
+
+class AppointmentID(BaseModel):
+    appointment_id: str
+
+@app.post("/set-appointments")
+async def set_appointments_times(request: AppointmentID):
+    id = request.appointment_id
+    print(type)
+
+    output = subprocess.check_output(["python", "main.py", "--set_appoinment", id])
+
+
+    result = output.splitlines()[-1].decode("utf-8")
+    print(result)
+    # return result
+    # return the output as json 
+    return JSONResponse(content=json.dumps(result), status_code=200)
+
+
+class EmailUser(BaseModel):
+    username: str
+
+@app.post("/send-email")
+async def get_appointments_times(request: EmailUser):
+    username = request.username
+    print(type)
+
+
+    output = subprocess.check_output(["python", "main.py", "--send_email", username])
 
     result = output.splitlines()[-1].decode("utf-8")
     print(result)

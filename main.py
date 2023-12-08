@@ -3,6 +3,7 @@ from agents.registeration_agent import RegisterationAgent
 from agents.client_agent import ClientAgent
 from agents.login_agent import LoginAgent
 from agents.scheduler_agent import SchedulerAgent
+from agents.email_agent import EmailAgent
 from constants import REGISTER_AGENT, CLIENT_AGENT, LOGIN_AGENT, SCHEDULER_AGENT, EMAIL_AGENT
 
 from args_parser import parser
@@ -18,6 +19,10 @@ def get_behavior():
         return "login"
     elif args.get_appoinments_times:
         return "get_appoinments_times"
+    elif args.set_appoinment:
+        return "set_appoinment"
+    elif args.send_email:
+        return "send_email"
 
 behavior = get_behavior()
 
@@ -72,7 +77,27 @@ async def main():
                                    behavior=behavior, appoinment_type=appoinment_type)
         await client_agent.start(auto_register=True)
 
+    elif args.set_appoinment:
+        print("Setting appointment")
+        app_id = args.set_appoinment[0]
 
+        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password)
+        await schduler_agent.start(auto_register=True)
+
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
+                                   behavior=behavior, appoinment_id=app_id)
+        await client_agent.start(auto_register=True)
+
+    elif args.send_email:
+        print("Sending email")
+        username = args.send_email[0]
+
+        email_agent = EmailAgent(EMAIL_AGENT.jid, EMAIL_AGENT.password)
+        await email_agent.start(auto_register=True)
+
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
+                                   behavior=behavior, username=username)
+        await client_agent.start(auto_register=True)
 
 
     # await spade.wait_until_finished(ClientAgent)
