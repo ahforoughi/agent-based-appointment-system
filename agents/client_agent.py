@@ -34,7 +34,7 @@ class ClientAgent(Agent):
             
             print("RegisterationBehavior in Client Agent running", )
             msg = Message(to="register@localhost")     # Instantiate the message
-            msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
+            # msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
             msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
             msg.set_metadata("language", "OWL-S")       # Set the language of the message content
             
@@ -129,8 +129,7 @@ class ClientAgent(Agent):
             print("SendEmailBehavior in Client Agent running")
             
             msg = Message(to="email@localhost")     # Instantiate the message
-            # msg.set_metadata("performative", "request")
-
+            msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
             msg.body = json.dumps({
             "username": self.agent.username
             })
