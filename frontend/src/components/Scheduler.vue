@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="q-my-auto q-ml-md">
-          <q-btn class="blue-btn" padding="xs lg" label="Search" />
+          <q-btn class="blue-btn" padding="xs lg" label="Search" @click="SearchType"/>
         </div>
       </div>
     </div>
@@ -81,9 +81,9 @@ export default {
     const selected = ref([]);
     const options = ref([
       "Medical",
-      "Therapy",
+      "Mental Health",
       "Chiropractic",
-      "Physiotherapy"
+      "Massage"
     ]);
     const selected_appointment_type = ref(null);
     const filter = ref("");
@@ -286,25 +286,35 @@ export default {
       }
     }
 
+    function SearchType() {
+      if (selected_appointment_type.value) {
+        console.log("correct", selected_appointment_type.value);
+      } else {
+        console.log("not");
+      }
+    }
+
     function addAppointment() {
       console.log(selected.value[0].id);
       // server and redirect to the user
       if (selected.value[0].id) {
         
         Notify.create({
-          color: "positive",
-          message: "successful",
+          color: "green-5",
+          message: "Reservation was successful!",
           icon: "check",
           position: "center",
+          classes: "q-py-md q-px-lg",
         });
         router.replace("/user");
         
       } else {
         Notify.create({
-          color: "negative",
-          message: "not successful",
+          color: "red-4",
+          message: "Please try again!",
           icon: "error",
           position: "center",
+          classes: "q-py-md q-px-lg",
         });
       }
     }
@@ -333,9 +343,13 @@ export default {
       addAppointment,
       options,
       columns,
-      selected_appointment_type
+      selected_appointment_type,
+      SearchType
     };
   },
 };
 </script>
+
+<style scoped>
+</style>
 

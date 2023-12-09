@@ -1,121 +1,154 @@
 <template>
   <q-layout>
-    <q-page-container
-      class="flex flex-center"
-      style="padding: 2rem 0"
-    >
-      <q-card class="my-card" style="width: 90vw; margin-bottom: 15px;">
-        <q-card-section class="text-white" style="background-color: var(--airBlue);">
-          <div class="text-h6 belkeryBlueColor">Your Profile</div>
+    <q-page-container class="flex flex-center" style="padding: 2rem 0">
+      <q-card class="my-card" style="width: 90vw; margin-bottom: 15px">
+        <q-card-section
+          class="text-white"
+          style="background-color: var(--airBlue)"
+        >
+          <div class="text-h6 belkeryBlueColor text-weight-bold">
+            Your Profile
+          </div>
         </q-card-section>
 
-        <q-card-section class="card-container" style="background-color: var(--blueHoneyDoo);">
-          <div class="q-mb-md" style="flex: 3">
-            <q-avatar size="6rem" class="q-mb-md">
-              <img src="@/assets/th.jpeg" alt="avatar" />
+        <q-card-section
+          class="card-container"
+          style="background-color: var(--blueHoneyDoo)"
+        >
+          <div class="q-mb-md" style="flex: 6">
+            <q-avatar size="12rem" class="q-mb-md">
+              <img src="@/assets/user.jpeg" alt="avatar" />
             </q-avatar>
             <div class="text-h6">{{ userInfo.name }}</div>
           </div>
 
-          <div style="flex: 9; height: 150px'">
-            <q-list bordered separator>
+          <div style="flex: 6; height: 200px">
+            <q-list>
               <q-item>
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left; font-weight: bolder"
-                  >Username:</q-item-section
-                >
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left"
-                  >{{ userInfo.username }}</q-item-section
-                >
+                <q-item-section>
+                  <div class="list-item">
+                    <span class="item-title">Full Name:</span>
+                    <span class="item-info">{{ userInfo.username }}</span>
+                  </div>
+                </q-item-section>
               </q-item>
-              <q-separator spaced inset />
+              <q-separator inset size="4px" class="separator" />
               <q-item>
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left; font-weight: bolder"
-                  >Email:</q-item-section
-                >
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left"
-                  >{{ userInfo.email }}</q-item-section
-                >
+                <q-item-section>
+                  <div class="list-item">
+                    <span class="item-title">UCalgary Email:</span>
+                    <span class="item-info">{{ userInfo.username }}</span>
+                  </div>
+                </q-item-section>
               </q-item>
-              <q-separator spaced inset />
+              <q-separator inset size="4px" class="separator" />
               <q-item>
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left; font-weight: bolder"
-                  >Phone Number:</q-item-section
-                >
-                <q-item-section
-                  class="list-item"
-                  style="flex: 1 1 50%; text-align: left"
-                  >{{ userInfo.phone }}</q-item-section
-                >
+                <q-item-section>
+                  <div class="list-item">
+                    <span class="item-title">Phone Number:</span>
+                    <span class="item-info">{{ userInfo.username }}</span>
+                  </div>
+                </q-item-section>
+              </q-item>
+              <q-separator inset size="4px" class="separator" />
+              <q-item>
+                <q-item-section>
+                  <div class="list-item">
+                    <span class="item-title">Address:</span>
+                    <span class="item-info">{{ userInfo.username }}</span>
+                  </div>
+                </q-item-section>
               </q-item>
             </q-list>
           </div>
         </q-card-section>
-
       </q-card>
 
-      <div class="row justify-between" style="min-width: 90%;">
+      <div class="row justify-around q-my-lg" style="min-width: 90%">
         <div>
-        <q-btn
-          label="Reseve New Time"
-          class="green-btn"
-          @click="goToScheduler"
-        />
+          <q-btn
+            label="Reseve New Time"
+            class="green-btn btn-size"
+            icon="event"
+            @click="goToScheduler"
+          />
         </div>
         <div>
-        <q-btn
+          <q-btn
             flat
             label="Logout"
             icon="logout"
             @click="onLogout"
-            class="light-red-btn q-py-auto"
-        />
+            class="light-red-btn q-py-auto btn-size"
+          />
         </div>
       </div>
 
-      <div
-        style="
-          width: 90vw;
-          margin: 20px 0;
-          border: 4px solid var(--mintGreen);
-          border-radius: 5px;
-          box-shadow: 0px 2px 4px var(--mintGreen);
-          background: var(--honeyDoo);
-          padding-bottom: 20px;
-        "
+      <q-card
+        class="reservation-card my-card"
+        style="background: var(--blueHoneyDoo); margin-top: 15px"
       >
-        <q-item-label
-          header
-          style="
-            margin-bottom: 10px;
-            font-weight: bolder;
-            text-decoration: underline;
-            font-size: 1.5em;
-          "
-        >
-          Following appointments
-        </q-item-label>
+        <q-img src="@/assets/reservations.jpg" :ratio="10 / 1" />
 
-        <div v-for="doctor in doctors" :key="doctor.id">
-          <q-item tag="label" v-ripple>
-            <q-item-section>
-              <q-item-label>{{ doctor.name }}</q-item-label>
-              <q-item-label caption>
-                {{ doctor.info }}
-              </q-item-label>
-            </q-item-section>
-          </q-item>
-        </div>
-      </div>
+        <q-card-section>
+          <div class="text-h5 q-mt-sm text-weight-bold">
+            Your Following Appointments
+          </div>
+        </q-card-section>
+
+        <q-card-actions class="q-my-none">
+          <q-space />
+          <q-btn
+            color="white"
+            round
+            flat
+            dense
+            :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+            @click="expanded = !expanded"
+            style="background-color: var(--asparagous)"
+          />
+        </q-card-actions>
+
+        <q-slide-transition>
+          <div v-show="expanded">
+            <q-separator />
+            <div v-if="doctors.length === 0" class="flex flex-center q-pa-md">
+              <div class="q-mr-sm">No Reservations Found.</div>
+              <q-avatar size="2em">
+                <img src="@/assets/sad.png" alt="avatar" />
+              </q-avatar>
+            </div>
+            <div
+              v-else
+              v-for="doctor in doctors"
+              :key="doctor.id"
+              class="row-container q-mb-md"
+            >
+              <div class="column">
+                <q-item-label header>Reserved Time</q-item-label>
+              </div>
+              <div class="column" style="align-items: flex-start">
+                <div>
+                  <span class="text-weight-bold">Healthcare Provider:</span>
+                  {{ doctor.name }}
+                </div>
+                <div>
+                  <span class="text-weight-bold">Appointment Type:</span>
+                  {{ doctor.type }}
+                </div>
+              </div>
+              <div class="column" style="align-items: flex-start">
+                <div>
+                  <span class="text-weight-bold">Date:</span> {{ doctor.day }}
+                </div>
+                <div>
+                  <span class="text-weight-bold">Time:</span> {{ doctor.hour }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </q-slide-transition>
+      </q-card>
     </q-page-container>
   </q-layout>
 </template>
@@ -123,7 +156,6 @@
 <script>
 import { ref, inject } from "vue";
 import { useRouter } from "vue-router";
-import { Notify } from "quasar";
 
 export default {
   setup() {
@@ -131,6 +163,7 @@ export default {
     const showPopup = ref(false);
     const selectedOption = ref("");
     const sharedState = inject("sharedState");
+    const expanded = ref(false);
 
     const userInfo = ref({
       name: "zahra",
@@ -145,11 +178,11 @@ export default {
       router.replace("/login");
     };
 
-    const doctors = ref([
-      { id: 1, name: "Doctor1", info: "The info for Doctor1" },
-      { id: 2, name: "Doctor2", info: "The info for Doctor2" },
-      { id: 3, name: "Doctor3", info: "The info for Doctor3" },
-    ]);
+    const doctors = ref([]);
+    // [
+    //   { id: 1, name: "Doctor1", type: "Therapy", day: "Monday", hour: "11-12" },
+    //   { id: 1, name: "Doctor2", type: "Therapy", day: "Monday", hour: "11-12" },
+    // ]
 
     function onItemClick(option) {
       console.log(option);
@@ -168,6 +201,7 @@ export default {
       selectedOption,
       onItemClick,
       goToScheduler,
+      expanded,
     };
   },
 };
@@ -198,6 +232,37 @@ q-avatar img {
 }
 
 .list-item {
-  margin: 5px 0;
+  margin-left: 10px;
+  text-align: left;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.item-title {
+  font-weight: bold;
+}
+.item-info {
+  margin-left: 10px;
+}
+.separator {
+  width: 50%;
+  background: var(--asparagous);
+  border-radius: 50%;
+}
+.btn-size {
+  width: 240px;
+}
+.reservation-card {
+  width: 90vw;
+}
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.column {
+  flex: 1;
+  padding: 0 10px;
 }
 </style>

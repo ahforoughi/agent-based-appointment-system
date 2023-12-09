@@ -122,3 +122,7 @@ button:focus-visible {
   background-color: var(--lightCoral)!important;
   color:var(--honeyDoo) !important; /* Adjust text color for better visibility */
 }
+
+.btn-size {
+  min-width: 150px !important;
+}
