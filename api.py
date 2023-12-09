@@ -112,8 +112,6 @@ async def get_appointments_times(request: AppointmentType):
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
     else:
         # get the type from the request body
-        data = json.loads(request.body)
-        type = data["type"]
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
 
     result = output.splitlines()[-1].decode("utf-8")
