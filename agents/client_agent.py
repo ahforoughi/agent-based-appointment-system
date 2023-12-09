@@ -130,6 +130,30 @@ class ClientAgent(Agent):
             
             msg = Message(to="email@localhost")     # Instantiate the message
             msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
+            msg.set_metadata("action", "email-confirmation")	
+
+            msg.body = json.dumps({
+            "username": self.agent.username
+            })
+
+            await self.send(msg)
+            print("Message sent!")
+
+            # set exit_code for the behaviour
+            self.exit_code = "Job Finished!"
+
+            # stop agent from behaviour
+            await self.agent.stop()
+
+
+    class SendReminderBehavior(OneShotBehaviour):
+        async def run(self):
+            print("SendReminderBehavior in Client Agent running")
+            
+            msg = Message(to="email@localhost")     # Instantiate the message
+            msg.set_metadata("performative", "inform")
+            msg.set_metadata("action", "email-reminder")
+
             msg.body = json.dumps({
             "username": self.agent.username
             })
@@ -162,6 +186,10 @@ class ClientAgent(Agent):
         elif self.behavior == "send_email":
             self.send_email_behavior = self.SendEmailBehavior()
             self.add_behaviour(self.send_email_behavior)
+        elif self.behavior == "send_reminder":
+            self.send_reminder_behavior = self.SendReminderBehavior()
+            self.add_behaviour(self.send_reminder_behavior)
+        
 
 
 

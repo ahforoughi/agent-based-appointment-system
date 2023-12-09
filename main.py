@@ -23,7 +23,8 @@ def get_behavior():
         return "set_appoinment"
     elif args.send_email:
         return "send_email"
-
+    elif args.send_reminder:
+        return "send_reminder"
 
 behavior = get_behavior()
 
@@ -100,6 +101,18 @@ async def main():
         client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
                                    behavior=behavior, username=username)
         await client_agent.start(auto_register=True)
+
+    elif args.send_reminder:
+        print("Sending reminder")
+        username = args.send_reminder[0]
+
+        email_agent = EmailAgent(EMAIL_AGENT.jid, EMAIL_AGENT.password)
+        await email_agent.start(auto_register=True)
+
+        client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
+                                   behavior=behavior, username=username)
+        await client_agent.start(auto_register=True)
+
 
 
     # await spade.wait_until_finished(ClientAgent)
