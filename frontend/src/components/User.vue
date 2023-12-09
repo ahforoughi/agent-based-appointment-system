@@ -106,6 +106,7 @@
             :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
             @click="expanded = !expanded"
             style="background-color: var(--asparagous)"
+            :disabled="loading"
           />
         </q-card-actions>
 
@@ -166,6 +167,7 @@ export default {
     const selectedOption = ref("");
     const sharedState = inject("sharedState");
     const expanded = ref(false);
+    const loading = ref(false);
 
     const userInfo = ref({
       firstname: localStorage.getItem("firstname"),
@@ -205,6 +207,7 @@ export default {
     async function getAppointments() {
       console.log("getAppointments");
       try {
+        loading.value=true;
         const response = await axios.post(
           "http://localhost:8000/get-appointments-user",
           {
@@ -224,6 +227,8 @@ export default {
         }));
       } catch (error) {
         console.error("There was an error!", error);
+      } finally {
+        loading.value=false;
       }
 
     };
@@ -238,7 +243,8 @@ export default {
       selectedOption,
       onItemClick,
       goToScheduler,
-      expanded
+      expanded,
+      loading
     };
   },
 };

@@ -129,6 +129,8 @@ async def get_appointments_times(request: AppointmentType):
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type_appoin])
 
     result = output.splitlines()[-1].decode("utf-8")
+    print(type(result))
+    print(result)
     result = convert_to_json(result)
 
     return JSONResponse(content=result, status_code=200)
@@ -200,30 +202,41 @@ async def get_appointments_times(request: EmailUser):
 
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from datetime import datetime, timedelta
+from pytz import timezone
 
-
-
-scheduler = BackgroundScheduler()
-scheduler.start()
 def send_email_later(username):
+    print("Sending email")
     subprocess.check_output(["python", "main.py", "--send_reminder", username])
 
 
 class remindUser(BaseModel):
     username: str
-    date: DateTime
+    date: datetime.datetime
+
+scheduler = BackgroundScheduler(timezone="America/Edmonton")
+scheduler.start()
 
 @app.post("/send-reminder")
-async def get_appointments_times(request: remindUser):
+async def send_reminder(request: remindUser):
      # Calculate when to send the email (24 hours before appointment time)
-    appointment_time = datetime.now().replace(hour=17, minute=50)
-    send_time = request.date - timedelta(minutes=5)
+    # appointment_time = datetime.datetime.now().replace(hour=20, minute=7)
+    appointment_time = datetime.datetime.now()  # December 10, 2023, 15:30
 
-    # Schedule the task
+    print(appointment_time)
+
+    # calcualte the new time based on appointment time 
+    send_time = appointment_time + datetime.timedelta(minutes=1)
+    send_time += datetime.timedelta(hours=1)
+
+
+    print(send_time)
     scheduler.add_job(send_email_later, 'date', run_date=send_time, args=[request.username])
-    return "done"
+        
 
+
+# Make sure to shut down the scheduler when the application exits
+import atexit
+atexit.register(lambda: scheduler.shutdown())
 
 
 

@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { ref, computed, nextTick, toRaw, watch } from "vue";
+import { ref, computed, nextTick, toRaw, watch, onMounted } from "vue";
 import { Notify } from "quasar";
 import { useRouter } from "vue-router";
 import { format } from "date-fns";
@@ -92,7 +92,7 @@ export default {
       "Chiropractic",
       "Massage",
     ]);
-    const selected_appointment_type = ref(null);
+    const selected_appointment_type = ref("all");
     const filter = ref("");
     const loading = ref(false);
 
@@ -286,6 +286,18 @@ export default {
       }
     }
 
+    function sendReminder() {
+      try {
+        const response = axios.post("http://localhost:8000/send-reminder", {
+          username: localStorage.getItem("username"),
+          date: selected.value[0].date
+        });
+        console.log("email reminder sent:", response.data);
+      } catch (error) {
+        console.error("There was an error with sending email!", error);
+      }
+    }
+
     async function addAppointment() {
       console.log(selected.value[0].appointment_id);
       var id = selected.value[0].appointment_id;
@@ -307,6 +319,7 @@ export default {
           classes: "q-py-md q-px-lg",
         });
         sendEmail();
+        sendReminder();
         router.replace("/user");
       } catch (error) {
         console.error("There was an error!", error);
@@ -328,6 +341,8 @@ export default {
       }
       return loading.value;
     });
+
+    onMounted(SearchType);
 
     return {
       tableClass: computed(() =>
