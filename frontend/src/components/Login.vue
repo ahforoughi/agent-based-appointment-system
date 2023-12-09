@@ -14,15 +14,15 @@
               v-model="userInfo.username"
               label="UCalgary Email"
               lazy-rules
-            />
-            <!-- :rules="[
+              :rules="[
                 (val) => (val && val.length > 0) || 'Please enter your email',
                 (val) =>
                   /^\S+@\S+\.\S+$/.test(val) || 'Please enter a valid email',
                 (val) =>
                   (val && val.endsWith('@ucalgary.ca')) ||
                   'Please enter a UCalgary email',
-              ]" -->
+              ]"
+            />
             <q-input
               class="q-mb-md"
               filled
@@ -72,8 +72,8 @@ import { Notify } from "quasar";
 export default {
   setup() {
     const userInfo = ref({
-      username: "zahra.arabi",
-      password: "password",
+      username: "",
+      password: "",
     });
     const loading = ref(false);
 

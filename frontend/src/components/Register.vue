@@ -30,7 +30,7 @@
             <q-input
               class="q-my-sm"
               filled
-              v-model="userInfo.email"
+              v-model="userInfo.username"
               label="UCalgary Email"
               lazy-rules
               :rules="[
@@ -123,7 +123,7 @@ export default {
     const userInfo = ref({
       firstname: "",
       lastname: "",
-      email: "",
+      username: "",
       phone: "",
       address: "",
       password: "",
