@@ -70,7 +70,7 @@ async def main():
             appoinment_type = args.get_appoinments_times[0]
             print(f"Getting appointments times for type: {args.get_appoinments_times[0]}")
 
-        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password)
+        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password, action="get_appointments_times")
         await schduler_agent.start(auto_register=True)
 
         client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
@@ -80,12 +80,13 @@ async def main():
     elif args.set_appoinment:
         print("Setting appointment")
         app_id = args.set_appoinment[0]
+        username = args.set_appoinment[1]
 
-        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password)
+        schduler_agent = SchedulerAgent(SCHEDULER_AGENT.jid, SCHEDULER_AGENT.password, action="set_appointment")
         await schduler_agent.start(auto_register=True)
 
         client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
-                                   behavior=behavior, appoinment_id=app_id)
+                                   behavior=behavior, appoinment_id=app_id, username=username)
         await client_agent.start(auto_register=True)
 
     elif args.send_email:
