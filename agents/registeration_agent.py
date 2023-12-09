@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 
 # class for the receiver agent (inherits from spade.agent.Agent) 
 class RegisterationAgent(Agent):
-    class AddUser(OneShotBehaviour):
+    class AddUser(CyclicBehaviour):
         async def run(self):
             print("RegisterationAgent running")
 
@@ -52,5 +52,5 @@ class RegisterationAgent(Agent):
         print("RegisterationAgent started")
         b = self.AddUser()
         template = Template()
-        template.set_metadata("performative", "inform")
+        # template.set_metadata("performative", "inform")
         self.add_behaviour(b, template)
