@@ -73,22 +73,24 @@ async def login(login_data: LoginData):
     output = subprocess.check_output(["python", "main.py", "--login", username, password])
     result = output.splitlines()[-1].decode("utf-8")
 
-    # retrive the user info from the database
-    db: Session = SessionLocal()
-    user = db.query(Patient).filter(Patient.username == username).first()
-    db.close()
 
-    # create the json response from the user info
-    user_info = {
-        "username": user.username,
-        "phone": user.phone,
-        "firstname": user.first_name,
-        "lastname": user.last_name,
-    }
 
     print(result)
 
     if "logged in" in result:
+        # retrive the user info from the database
+        db: Session = SessionLocal()
+        user = db.query(Patient).filter(Patient.username == username).first()
+        db.close()
+
+        # create the json response from the user info
+        user_info = {
+            "username": user.username,
+            "phone": user.phone,
+            "firstname": user.first_name,
+            "lastname": user.last_name,
+        }
+        
         return JSONResponse(content={"message": "User Logged in", "user_info": user_info}, status_code=200)
     else:
         return JSONResponse(content={"message": "User login Failed"}, status_code=400)
