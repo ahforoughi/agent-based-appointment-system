@@ -24,6 +24,7 @@ def get_behavior():
     elif args.send_email:
         return "send_email"
 
+
 behavior = get_behavior()
 
 print(f"Client Agent Behavior: {behavior}")
