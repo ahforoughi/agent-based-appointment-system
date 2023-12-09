@@ -115,20 +115,43 @@ class AppointmentID(BaseModel):
 @app.post("/set-appointments")
 async def set_appointments_times(request: AppointmentID):
     id = request.appointment_id
-    print(type)
 
     output = subprocess.check_output(["python", "main.py", "--set_appoinment", id])
-
-
     result = output.splitlines()[-1].decode("utf-8")
-    print(result)
-    # return result
-    # return the output as json 
-    return JSONResponse(content=json.dumps(result), status_code=200)
 
+    if "full" in result:
+        return JSONResponse(content={"message": "Appointment is set"}, status_code=200)
+    else:
+        return JSONResponse(content={"message": "Appointment setting failed"}, status_code=400)
 
 class EmailUser(BaseModel):
     username: str
+
+# an endpoint to get all future appointments for a user
+@app.post("/get-appointments-user")
+async def get_appointments_times(request: EmailUser):
+    username = request.username
+
+    # query the database for the user appointments in the appointment table
+    db: Session = SessionLocal()
+
+    # find the user id from the Patient table
+    user_id = db.query(Patient).filter(Patient.username == username).first().id
+
+    # find the appointments with the same user id from the Appointment table
+    appointments = db.query(Appointment).filter(Appointment.patient_id == user_id).all()
+
+    # return the appointments as json
+    appointments_times = []
+    for appointment in appointments:
+        appointments_times.append({
+            "appointment_id": appointment.id,
+            "doctor_specilization": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().specialization,
+            "doctor_name": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().first_name,
+        })
+    
+    db.close()
+    return JSONResponse(content=json.dumps(appointments_times), status_code=200)
 
 @app.post("/send-email")
 async def get_appointments_times(request: EmailUser):

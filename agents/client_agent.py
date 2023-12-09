@@ -86,8 +86,8 @@ class ClientAgent(Agent):
         async def run(self):
             print("GetAppoinmentsTimesBehavior in Client Agent running")
             msg = Message(to="scheduler@localhost")     # Instantiate the message
-            # msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
-            msg.set_metadata("action", "get_appoinments_times")  
+            msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
+            # msg.set_metadata("action", "get_appoinments_times")  
             
             msg.body = json.dumps({
             "appoinment_type": self.agent.appoinment_type
@@ -111,10 +111,9 @@ class ClientAgent(Agent):
             msg.set_metadata("performative", "request")  # Set the "inform" FIPA performative
 
             msg.body = json.dumps({
-            "appoinment_id": self.agent.appoinment_id
+            "appoinment_id": self.agent.appoinment_id, 
+            "username": self.agent.username
             })
-            msg.set_metadata("ontology", "myOntology")  # Set the ontology of the message content
-            msg.set_metadata("language", "OWL-S")       # Set the language of the message content
 
             await self.send(msg)
             print("Message sent!")

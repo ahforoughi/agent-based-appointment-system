@@ -50,7 +50,7 @@ class Appointment(Base):
 
 
 # Separate database files for each class
-DATABASE_URL = "sqlite:////home/sm/project/agent-based-appointment-system/APS.db"
+DATABASE_URL = "sqlite:////mnt/d/A/Fall2023/Appointment-System/Appoinment-System-Spade/APS.db"
 
 
 engine = create_engine(DATABASE_URL)
