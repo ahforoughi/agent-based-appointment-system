@@ -17,12 +17,7 @@
           </div>
         </div>
         <div class="q-my-auto q-ml-md">
-          <q-btn
-            class="blue-btn"
-            padding="xs lg"
-            label="Search"
-            @click="SearchType"
-          />
+          <q-btn class="blue-btn" padding="xs lg" label="Search" @click="SearchType" />
         </div>
       </div>
     </div>
@@ -45,7 +40,7 @@
       title="Available Appointments"
       :rows="rows"
       :columns="columns"
-      row-key="name"
+      row-key="appointment_id"
       selection="single"
       v-model:selected="selected"
       :pagination="pagination"
@@ -56,13 +51,7 @@
       :loading="loading"
     >
       <template v-slot:top-right>
-        <q-input
-          borderless
-          dense
-          debounce="300"
-          v-model="filter"
-          placeholder="Search"
-        >
+        <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
           <template v-slot:append>
             <q-icon name="search" />
           </template>
@@ -86,12 +75,7 @@ export default {
     const pagination = ref({});
     const router = useRouter();
     const selected = ref([]);
-    const options = ref([
-      "Medical",
-      "Mental Health",
-      "Chiropractic",
-      "Massage",
-    ]);
+    const options = ref(["Medical", "Mental Health", "Chiropractic", "Massage"]);
     const selected_appointment_type = ref(null);
     const filter = ref("");
     const loading = ref(false);
@@ -138,11 +122,11 @@ export default {
     const rows = ref([
       // {
       //   appointment_id: 1,
-      //   doctor_name: "Frozen Yogurt",
-      //   date: "1998-05-15",
-      //   time: "14:30:00",
-      //   doctor_specilization: "Physiotherapy",
-      // }
+      //   doctor_specilization: "medical",
+      //   doctor_name: "Iona",
+      //   time: "11:00:00",
+      //   date: "2023-12-13T00:00:00",
+      // },
     ]);
 
     function onKey(evt) {
@@ -163,9 +147,7 @@ export default {
       }
 
       const currentIndex =
-        selected.value.length > 0
-          ? computedRows.indexOf(toRaw(selected.value[0]))
-          : -1;
+        selected.value.length > 0 ? computedRows.indexOf(toRaw(selected.value[0])) : -1;
       const currentPage = pagination.value.page;
       const rowsPerPage =
         pagination.value.rowsPerPage === 0
@@ -221,9 +203,7 @@ export default {
 
         nextTick(() => {
           const { computedRows } = tableRef.value;
-          selected.value = [
-            computedRows[Math.min(index, computedRows.length - 1)],
-          ];
+          selected.value = [computedRows[Math.min(index, computedRows.length - 1)]];
           tableRef.value.$el.focus();
         });
       } else {
@@ -251,17 +231,16 @@ export default {
           "http://localhost:8000/appointments",
           {
             appoinment_type: appoinment_type,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
-        console.log(response.data);
-        // const data = response.data.map(item => ({
-        //   appointment_id: item.appointment_id,
-        //   doctor_name: item.doctor_name,
-        //   date: item.date.split('T')[0],  // Assuming 'date' is in ISO format
-        //   time: item.date.split('T')[1],  // Assuming you want the time part of the datetime
-        //   doctor_specilization: item.doctor_specilization
-        // }));
-        rows.value = response.data;
+        console.log("json file", JSON.parse(response.data));
+        rows.value = JSON.parse(response.data);
+        console.log("rows value", rows.value);
       } catch (error) {
         console.error("There was an error!", error);
         Notify.create({
@@ -276,11 +255,19 @@ export default {
       }
     }
 
-    function addAppointment() {
-      console.log(selected.value[0].id);
-      // server and redirect to the user
-      if (selected.value[0].id) {
-        Notify.create({
+    async function addAppointment() {
+      console.log(selected.value[0].appointment_id);
+      var id = selected.value[0].appointment_id;
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/set-appointments",
+          {
+            appointment_id: id,
+            username:  localStorage.getItem("username")
+          }
+        );
+        console.log(response);
+          Notify.create({
           color: "green-5",
           message: "Reservation was successful!",
           icon: "check",
@@ -288,7 +275,8 @@ export default {
           classes: "q-py-md q-px-lg",
         });
         router.replace("/user");
-      } else {
+      } catch (error) {
+        console.error("There was an error!", error);
         Notify.create({
           color: "red-4",
           message: "Please try again!",
@@ -296,6 +284,8 @@ export default {
           position: "center",
           classes: "q-py-md q-px-lg",
         });
+      } finally {
+        loading.value = false;
       }
     }
 
@@ -331,6 +321,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
-
+<style scoped></style>

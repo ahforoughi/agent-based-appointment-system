@@ -142,22 +142,22 @@ appointments_data = [
         "time": time(11),
         "status": "empty"
     },
-    # {
-    #     # "patient_id": NULL,
-    #     "doctor_id": 1,
-    #     "weekday": get_weekday(date(2023, 12, 13)),
-    #     "date": date(2023, 12, 13),
-    #     "time": time(12),
-    #     "status": "empty"
-    # },
-    # {
-    #     # "patient_id": NULL,
-    #     "doctor_id": 1,
-    #     "weekday": get_weekday(date(2023, 12, 13)),
-    #     "date": date(2023, 12, 13),
-    #     "time": time(13),
-    #     "status": "empty"
-    # },
+    {
+        # "patient_id": NULL,
+        "doctor_id": 1,
+        "weekday": get_weekday(date(2023, 12, 13)),
+        "date": date(2023, 12, 13),
+        "time": time(12),
+        "status": "empty"
+    },
+    {
+        # "patient_id": NULL,
+        "doctor_id": 1,
+        "weekday": get_weekday(date(2023, 12, 13)),
+        "date": date(2023, 12, 13),
+        "time": time(13),
+        "status": "empty"
+    },
     # {
     #     # "patient_id": NULL,
     #     "doctor_id": 1,

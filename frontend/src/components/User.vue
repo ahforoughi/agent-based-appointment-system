@@ -121,7 +121,7 @@
             <div
               v-else
               v-for="doctor in doctors"
-              :key="doctor.id"
+              :key="doctor.appointment_id"
               class="row-container q-mb-md"
             >
               <div class="column">
@@ -130,19 +130,19 @@
               <div class="column" style="align-items: flex-start">
                 <div>
                   <span class="text-weight-bold">Healthcare Provider:</span>
-                  {{ doctor.name }}
+                  {{ doctor.doctor_name }}
                 </div>
                 <div>
                   <span class="text-weight-bold">Appointment Type:</span>
-                  {{ doctor.type }}
+                  {{ doctor.doctor_specilization }}
                 </div>
               </div>
               <div class="column" style="align-items: flex-start">
                 <div>
-                  <span class="text-weight-bold">Date:</span> {{ doctor.day }}
+                  <span class="text-weight-bold">Date:</span> {{ doctor.appointment_date }}
                 </div>
                 <div>
-                  <span class="text-weight-bold">Time:</span> {{ doctor.hour }}
+                  <span class="text-weight-bold">Time:</span> {{ doctor.appointment_time }}
                 </div>
               </div>
             </div>
@@ -154,8 +154,9 @@
 </template>
 
 <script>
-import { ref, inject } from "vue";
+import { ref, inject, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 export default {
   setup() {
@@ -200,6 +201,25 @@ export default {
     function goToScheduler() {
       router.push("/schedule");
     }
+
+    async function getAppointments() {
+      console.log("getAppointments");
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/get-appointments-user",
+          {
+            username: localStorage.getItem("username"),
+          }
+        );
+        console.log(response.data);
+        doctors.value = response.data;
+      } catch (error) {
+        console.error("There was an error!", error);
+      }
+
+    };
+
+    onMounted(getAppointments);
 
     return {
       userInfo,

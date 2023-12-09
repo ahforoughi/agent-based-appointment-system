@@ -102,19 +102,44 @@ async def login(login_data: LoginData):
 class AppointmentType(BaseModel):
     appoinment_type: str
 
+import datetime
+
+
+def convert_to_json(var):
+    # Step 1: Parse the string
+    parsed_data = eval(var)
+
+    # Step 2: Handle datetime objects
+    for item in parsed_data:
+        if 'date' in item:
+            item['date'] = item['date'].isoformat()
+        if 'time' in item:
+            item['time'] = item['time'].isoformat()
+
+    # Step 3: Convert to JSON
+    return json.dumps(parsed_data)
+
+
+
+
 @app.post("/appointments")
 async def get_appointments_times(request: AppointmentType):
-    type = request.appoinment_type
-    print(type)
+    type_appoin = request.appoinment_type
+    print(type_appoin)
 
     # check if the request body is empty
-    if type == "all":
-        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
+    if type_appoin == "all":
+        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type_appoin])
     else:
         # get the type from the request body
-        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type])
+        output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type_appoin])
 
     result = output.splitlines()[-1].decode("utf-8")
+    print(convert_to_json(result))
+    result = convert_to_json(result)
+    
+    # convert the result to json
+    result = json.loads(result)
     print(result)
     # return result
     # return the output as json 
@@ -123,13 +148,16 @@ async def get_appointments_times(request: AppointmentType):
 
 
 class AppointmentID(BaseModel):
-    appointment_id: str
+    appointment_id: int
+    username: str
 
 @app.post("/set-appointments")
 async def set_appointments_times(request: AppointmentID):
-    id = request.appointment_id
+    id_app = str(request.appointment_id)
+    username = request.username
+    logger.info(request)
 
-    output = subprocess.check_output(["python", "main.py", "--set_appoinment", id])
+    output = subprocess.check_output(["python", "main.py", "--set_appoinment", id_app, username])
     result = output.splitlines()[-1].decode("utf-8")
 
     if "full" in result:
@@ -154,13 +182,15 @@ async def get_appointments_times(request: EmailUser):
     # find the appointments with the same user id from the Appointment table
     appointments = db.query(Appointment).filter(Appointment.patient_id == user_id).all()
 
-    # return the appointments as json
+    # return the appointments as json and convert the datetime objects to string
     appointments_times = []
     for appointment in appointments:
         appointments_times.append({
             "appointment_id": appointment.id,
             "doctor_specilization": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().specialization,
             "doctor_name": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().first_name,
+            "time": appointment.time,
+            "date": appointment.date,
         })
     
     db.close()
