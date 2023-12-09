@@ -27,7 +27,8 @@ class User(BaseModel):
     username: str
     phone: str
     password: str
-    email: EmailStr
+    firstname: str
+    lastname: str
 
 # Define a root `/register` endpoint which receives `username`, `email`, `phone` and `password` parameters
 @app.post("/register")
@@ -39,8 +40,10 @@ async def register_user(user: User):
     password = user.password
 
     output = subprocess.check_output(["python", "main.py", "--register", 
-                                    firstname, lastname, username, email, phone, password])
+                                    firstname, lastname, username, phone, password])
     result = output.splitlines()[-1].decode("utf-8")
+
+    print(result)
 
     # return 200 code if the user registered successfully otherwise return 500 code
     if "Registered new user:" in result:
