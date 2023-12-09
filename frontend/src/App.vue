@@ -120,6 +120,18 @@ export default {
       isUserLoggedIn: localStorage.getItem("isUserLoggedIn")
         ? localStorage.getItem("isUserLoggedIn")
         : false,
+      username: localStorage.getItem("username")
+        ? localStorage.getItem("username")
+        : null,
+      phone: localStorage.getItem("phone")
+        ? localStorage.getItem("phone")
+        : null,
+      firstname: localStorage.getItem("firstname")
+        ? localStorage.getItem("firstname")
+        : null,
+      lastname: localStorage.getItem("lastname")
+        ? localStorage.getItem("lastname")
+        : null,
     });
 
     provide("sharedState", sharedState);

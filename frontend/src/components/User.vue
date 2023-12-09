@@ -19,7 +19,7 @@
             <q-avatar size="12rem" class="q-mb-md">
               <img src="@/assets/user.jpeg" alt="avatar" />
             </q-avatar>
-            <div class="text-h6">{{ userInfo.name }}</div>
+            <div class="text-h6">{{ userInfo.firstname }}</div>
           </div>
 
           <div style="flex: 6; height: 200px">
@@ -28,7 +28,7 @@
                 <q-item-section>
                   <div class="list-item">
                     <span class="item-title">Full Name:</span>
-                    <span class="item-info">{{ userInfo.username }}</span>
+                    <span class="item-info">{{ userInfo.fullname }}</span>
                   </div>
                 </q-item-section>
               </q-item>
@@ -46,11 +46,11 @@
                 <q-item-section>
                   <div class="list-item">
                     <span class="item-title">Phone Number:</span>
-                    <span class="item-info">{{ userInfo.username }}</span>
+                    <span class="item-info">{{ userInfo.phone }}</span>
                   </div>
                 </q-item-section>
               </q-item>
-              <q-separator inset size="4px" class="separator" />
+              <!-- <q-separator inset size="4px" class="separator" />
               <q-item>
                 <q-item-section>
                   <div class="list-item">
@@ -58,7 +58,7 @@
                     <span class="item-info">{{ userInfo.username }}</span>
                   </div>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
             </q-list>
           </div>
         </q-card-section>
@@ -166,15 +166,23 @@ export default {
     const expanded = ref(false);
 
     const userInfo = ref({
-      name: "zahra",
-      username: "name",
-      email: "test@",
-      phone: "2222",
+      firstname: localStorage.getItem("firstname"),
+      fullname: localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"),
+      username: localStorage.getItem("username"),
+      phone: localStorage.getItem("phone"),
     });
 
     const onLogout = () => {
       sharedState.isUserLoggedIn = false;
+      sharedState.username = null;
+      sharedState.firstname = null;
+      sharedState.lastname = null;
+      sharedState.phone = null;
       localStorage.removeItem("isUserLoggedIn");
+      localStorage.removeItem("username");
+      localStorage.removeItem("firstname");
+      localStorage.removeItem("lastname");
+      localStorage.removeItem("phone");
       router.replace("/login");
     };
 

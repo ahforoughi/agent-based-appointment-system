@@ -92,7 +92,7 @@
             />
 
             <div class="q-mt-md">
-              <q-btn label="Register" type="submit" class="blue-btn btn-size" stretch />
+              <q-btn label="Register" type="submit" class="blue-btn btn-size" stretch :disabled="loading"/>
             </div>
           </q-form>
         </q-card-section>

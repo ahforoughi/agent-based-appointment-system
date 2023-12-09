@@ -81,6 +81,7 @@ export default {
     const router = useRouter();
 
     async function onLogin() {
+      console.log(userInfo.value);
       loading.value = true;
       try {
         const response = await axios.post(
@@ -89,7 +90,15 @@ export default {
         );
         console.log(response);
         sharedState.isUserLoggedIn = true;
+        sharedState.username = response.data.user_info.username;
+        sharedState.firstname = response.data.user_info.firstname;
+        sharedState.lastname = response.data.user_info.lastname;
+        sharedState.phone = response.data.user_info.phone;
         localStorage.setItem("isUserLoggedIn", true);
+        localStorage.setItem("username", response.data.user_info.username);
+        localStorage.setItem("firstname", response.data.user_info.firstname);
+        localStorage.setItem("lastname", response.data.user_info.lastname);
+        localStorage.setItem("phone", response.data.user_info.phone);
         router.push("/user");
       } catch (error) {
         console.error("There was an error!", error);
