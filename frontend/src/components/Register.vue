@@ -87,7 +87,7 @@
               label="Confirm Password"
               lazy-rules
               :rules="[
-                (val) => val === user.password || 'Passwords do not match',
+                (val) => val === userInfo.password || 'Passwords do not match',
               ]"
             />
 
@@ -134,6 +134,7 @@ export default {
     const loading = ref(false);
 
     async function onSubmit() {
+      console.log(userInfo.value);
       try {
         loading.value = true;
         const response = await axios.post(
