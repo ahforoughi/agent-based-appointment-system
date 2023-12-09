@@ -142,1526 +142,1526 @@ appointments_data = [
         "time": time(11),
         "status": "empty"
     },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 1,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        "patient_id": 2,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 2,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 3,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        "patient_id": 2,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 4,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 5,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        "patient_id": 2,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 6,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 12)),
-        "date": date(2023, 12, 12),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 12)),
-        "date": date(2023, 12, 12),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 12)),
-        "date": date(2023, 12, 12),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 12)),
-        "date": date(2023, 12, 12),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 12)),
-        "date": date(2023, 12, 12),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 14)),
-        "date": date(2023, 12, 14),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 14)),
-        "date": date(2023, 12, 14),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 14)),
-        "date": date(2023, 12, 14),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 14)),
-        "date": date(2023, 12, 14),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 19)),
-        "date": date(2023, 12, 19),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 19)),
-        "date": date(2023, 12, 19),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 19)),
-        "date": date(2023, 12, 19),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 19)),
-        "date": date(2023, 12, 19),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 19)),
-        "date": date(2023, 12, 19),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 21)),
-        "date": date(2023, 12, 21),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 21)),
-        "date": date(2023, 12, 21),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 21)),
-        "date": date(2023, 12, 21),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 21)),
-        "date": date(2023, 12, 21),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 26)),
-        "date": date(2023, 12, 26),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 26)),
-        "date": date(2023, 12, 26),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 26)),
-        "date": date(2023, 12, 26),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 26)),
-        "date": date(2023, 12, 26),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 26)),
-        "date": date(2023, 12, 26),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 28)),
-        "date": date(2023, 12, 28),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 28)),
-        "date": date(2023, 12, 28),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 28)),
-        "date": date(2023, 12, 28),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 7,
-        "weekday": get_weekday(date(2023, 12, 28)),
-        "date": date(2023, 12, 28),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        "patient_id": 1,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 11)),
-        "date": date(2023, 12, 11),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 13)),
-        "date": date(2023, 12, 13),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        "patient_id": 2,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 15)),
-        "date": date(2023, 12, 15),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 18)),
-        "date": date(2023, 12, 18),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 20)),
-        "date": date(2023, 12, 20),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        "patient_id": 2,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(10),
-        "status": "scheduled"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 22)),
-        "date": date(2023, 12, 22),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 25)),
-        "date": date(2023, 12, 25),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 1,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(13),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 27)),
-        "date": date(2023, 12, 27),
-        "time": time(14),
-        "status": "empty"
-    },
-    {
-        # "patient_id": 2,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(10),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(11),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(12),
-        "status": "empty"
-    },
-    {
-        # "patient_id": NULL,
-        "doctor_id": 8,
-        "weekday": get_weekday(date(2023, 12, 29)),
-        "date": date(2023, 12, 29),
-        "time": time(13),
-        "status": "empty"
-    },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 1,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 2,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 2,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 3,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 2,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 4,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 5,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 2,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 6,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 12)),
+    #     "date": date(2023, 12, 12),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 12)),
+    #     "date": date(2023, 12, 12),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 12)),
+    #     "date": date(2023, 12, 12),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 12)),
+    #     "date": date(2023, 12, 12),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 12)),
+    #     "date": date(2023, 12, 12),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 14)),
+    #     "date": date(2023, 12, 14),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 14)),
+    #     "date": date(2023, 12, 14),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 14)),
+    #     "date": date(2023, 12, 14),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 14)),
+    #     "date": date(2023, 12, 14),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 19)),
+    #     "date": date(2023, 12, 19),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 19)),
+    #     "date": date(2023, 12, 19),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 19)),
+    #     "date": date(2023, 12, 19),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 19)),
+    #     "date": date(2023, 12, 19),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 19)),
+    #     "date": date(2023, 12, 19),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 21)),
+    #     "date": date(2023, 12, 21),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 21)),
+    #     "date": date(2023, 12, 21),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 21)),
+    #     "date": date(2023, 12, 21),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 21)),
+    #     "date": date(2023, 12, 21),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 26)),
+    #     "date": date(2023, 12, 26),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 26)),
+    #     "date": date(2023, 12, 26),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 26)),
+    #     "date": date(2023, 12, 26),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 26)),
+    #     "date": date(2023, 12, 26),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 26)),
+    #     "date": date(2023, 12, 26),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 28)),
+    #     "date": date(2023, 12, 28),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 28)),
+    #     "date": date(2023, 12, 28),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 28)),
+    #     "date": date(2023, 12, 28),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 7,
+    #     "weekday": get_weekday(date(2023, 12, 28)),
+    #     "date": date(2023, 12, 28),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 1,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 11)),
+    #     "date": date(2023, 12, 11),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 13)),
+    #     "date": date(2023, 12, 13),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 2,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 15)),
+    #     "date": date(2023, 12, 15),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 18)),
+    #     "date": date(2023, 12, 18),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 20)),
+    #     "date": date(2023, 12, 20),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     "patient_id": 2,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(10),
+    #     "status": "scheduled"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 22)),
+    #     "date": date(2023, 12, 22),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 25)),
+    #     "date": date(2023, 12, 25),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 1,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 27)),
+    #     "date": date(2023, 12, 27),
+    #     "time": time(14),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": 2,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(10),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(11),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(12),
+    #     "status": "empty"
+    # },
+    # {
+    #     # "patient_id": NULL,
+    #     "doctor_id": 8,
+    #     "weekday": get_weekday(date(2023, 12, 29)),
+    #     "date": date(2023, 12, 29),
+    #     "time": time(13),
+    #     "status": "empty"
+    # },
 
 ]
 

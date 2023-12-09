@@ -17,7 +17,12 @@
           </div>
         </div>
         <div class="q-my-auto q-ml-md">
-          <q-btn class="blue-btn" padding="xs lg" label="Search" @click="SearchType"/>
+          <q-btn
+            class="blue-btn"
+            padding="xs lg"
+            label="Search"
+            @click="SearchType"
+          />
         </div>
       </div>
     </div>
@@ -31,7 +36,7 @@
     </div>
     <q-table
       class="q-mx-lg"
-      style="background-color: var(--chamRed);"
+      style="background-color: var(--chamRed)"
       flat
       bordered
       ref="tableRef"
@@ -48,6 +53,7 @@
       @focusin="activateNavigation"
       @focusout="deactivateNavigation"
       @keydown="onKey"
+      :loading="loading"
     >
       <template v-slot:top-right>
         <q-input
@@ -70,7 +76,8 @@
 import { ref, computed, nextTick, toRaw } from "vue";
 import { Notify } from "quasar";
 import { useRouter } from "vue-router";
-import { format } from 'date-fns';
+import { format } from "date-fns";
+import axios from "axios";
 
 export default {
   setup() {
@@ -83,10 +90,11 @@ export default {
       "Medical",
       "Mental Health",
       "Chiropractic",
-      "Massage"
+      "Massage",
     ]);
     const selected_appointment_type = ref(null);
     const filter = ref("");
+    const loading = ref(false);
 
     const columns = ref([
       {
@@ -94,110 +102,47 @@ export default {
         required: true,
         label: "Health Care Provider Name",
         align: "left",
-        field: (row) => row.name,
+        field: (row) => row.doctor_name,
         format: (val) => `${val}`,
         sortable: true,
       },
       {
-        name: "type",
+        name: "doctor_specilization",
         required: true,
-        label: "Type",
+        label: "Health Care Provider Specilization",
         align: "left",
-        field: (row) => row.type,
+        field: (row) => row.doctor_specilization,
         format: (val) => `${val}`,
         sortable: true,
       },
       {
-        name: "Date",
+        name: "date",
         required: true,
         align: "center",
         label: "Date",
         field: (row) => row.date,
-        format: (val) => format(new Date(val), 'yyyy/MM/dd'),
+        format: (val) => format(new Date(val), "yyyy/MM/dd"),
         sortable: true,
       },
       {
-        name: "Time",
+        name: "time",
         required: true,
         align: "center",
         label: "Time",
         field: (row) => row.time,
-        format: (val) => format(new Date(`1970-01-01T${val}`), 'HH:mm a'),
+        format: (val) => format(new Date(`1970-01-01T${val}`), "HH:mm a"),
         sortable: true,
       },
     ]);
 
     const rows = ref([
-      {
-        id: 1,
-        name: "Frozen Yogurt",
-        date: "1998-05-15",
-        time: "14:30:00",
-        type: "Physiotherapy",
-      },
-      {
-        id: 2,
-        name: "Ice cream sandwich",
-        date: "1990-05-15",
-        time: "16:30:00",
-        type: "Chiropractic",
-      },
-      {
-        id: 3,
-        name: "Eclair",
-        date: "1993-05-15",
-        time: "12:30:00",
-        type: "Therapy",
-      },
-      {
-        id: 4,
-        name: "Cupcake",
-        date: "1990-05-15",
-        time: "12:30:00",
-        type: "Chiropractic",
-      },
-      {
-        id: 5,
-        name: "Gingerbread",
-        date: "1990-05-15",
-        time: "10:50:00",
-        type: "Medical",
-      },
-      {
-        id: 6,
-        name: "Jelly bean",
-        date: "1990-05-15",
-        time: "14:30:00",
-        type: "Chiropractic",
-      },
-      {
-        id: 7,
-        name: "Lollipop",
-        date: "1990-05-15",
-        time: "19:30:00",
-        type: "Medical",
-      },
-      {
-        id: 8,
-        name: "Honeycomb",
-        date: "1990-05-15",
-        time: "10:30:00",
-        type: "Physiotherapy",
-      },
-      {
-        id: 9,
-        name: "Donut",
-        date: "1990-05-15",
-        time: "15:30:00",
-        type: "Therapy",
-      },
-      {
-        id: 10,
-        name: "KitKat",
-        date: "1990-05-15",
-        time: "14:30:00",
-        type: "Medical",
-      },
+      // {
+      //   appointment_id: 1,
+      //   doctor_name: "Frozen Yogurt",
+      //   date: "1998-05-15",
+      //   time: "14:30:00",
+      //   doctor_specilization: "Physiotherapy",
+      // }
     ]);
 
     function onKey(evt) {
@@ -286,11 +231,48 @@ export default {
       }
     }
 
-    function SearchType() {
+    async function SearchType() {
+      var appoinment_type = "all";
       if (selected_appointment_type.value) {
+        if (selected_appointment_type.value == "Medical") {
+          appoinment_type = "medical";
+        } else if (selected_appointment_type.value == "Mental Health") {
+          appoinment_type = "mental_health";
+        } else if (selected_appointment_type.value == "Chiropractic") {
+          appoinment_type = "chiropractic";
+        } else if (selected_appointment_type.value == "Massage") {
+          appoinment_type = "massage";
+        }
         console.log("correct", selected_appointment_type.value);
-      } else {
-        console.log("not");
+      }
+      try {
+        loading.value = true;
+        const response = await axios.post(
+          "http://localhost:8000/appointments",
+          {
+            appoinment_type: appoinment_type,
+          }
+        );
+        console.log(response.data);
+        // const data = response.data.map(item => ({
+        //   appointment_id: item.appointment_id,
+        //   doctor_name: item.doctor_name,
+        //   date: item.date.split('T')[0],  // Assuming 'date' is in ISO format
+        //   time: item.date.split('T')[1],  // Assuming you want the time part of the datetime
+        //   doctor_specilization: item.doctor_specilization
+        // }));
+        rows.value = response.data;
+      } catch (error) {
+        console.error("There was an error!", error);
+        Notify.create({
+          color: "red-4",
+          message: "Please try again!",
+          icon: "error",
+          position: "center",
+          classes: "q-py-md q-px-lg",
+        });
+      } finally {
+        loading.value = false;
       }
     }
 
@@ -298,7 +280,6 @@ export default {
       console.log(selected.value[0].id);
       // server and redirect to the user
       if (selected.value[0].id) {
-        
         Notify.create({
           color: "green-5",
           message: "Reservation was successful!",
@@ -307,7 +288,6 @@ export default {
           classes: "q-py-md q-px-lg",
         });
         router.replace("/user");
-        
       } else {
         Notify.create({
           color: "red-4",
@@ -344,7 +324,8 @@ export default {
       options,
       columns,
       selected_appointment_type,
-      SearchType
+      SearchType,
+      loading,
     };
   },
 };
