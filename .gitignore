@@ -26,5 +26,11 @@ build/
 # ignore all __pycache__ directories
 __pycache__/*
 */__pycache__/*
+__pycache__/
+pycache/
+models/__pycache__/
+agents/__pycache__/
 
 APS.db
+
+venv

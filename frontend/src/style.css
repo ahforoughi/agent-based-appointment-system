@@ -11,6 +11,24 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --white: #F4F4F4;
+  --black: #000000;
+  --belkeryBlue: #1D3557;
+  --salmonPink: #EC9A9A;
+  --rustyRed: #D13440;
+  --red: #E63946;
+  --lightCoral: #E96A70;
+  --paleDogwood : #EBCBC6;
+  --chamRed: #EEEFF2;
+  --honeyDoo: #F1FAEE;
+  --blueHoneyDoo: #DFF2EA;
+  --mintGreen: #CDEAE5;
+  --airBlue: #669BB2;
+  --cerBlue: #457B9D;
+  --asparagous: #7E9971;
+  --pistachio: #BFD37D;
+  --shamrockGreen: #559972;
 }
 
 a {
@@ -77,4 +95,34 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.asparagousColor {
+  color: var(--asparagous);
+}
+
+.cerBlueColor {
+  color: var(--cerBlue);
+}
+.belkeryBlueColor {
+  color: var(--belkeryBlue);
+}
+
+.green-btn {
+  background-color: var(--shamrockGreen)!important;
+  color:var(--honeyDoo) !important; /* Adjust text color for better visibility */
+}
+
+.blue-btn {
+  background-color: var(--airBlue)!important;
+  color: var(--white) !important; /* Adjust text color for better visibility */ 
+}
+
+.light-red-btn {
+  background-color: var(--lightCoral)!important;
+  color:var(--honeyDoo) !important; /* Adjust text color for better visibility */
+}
+
+.btn-size {
+  min-width: 150px !important;
 }

@@ -1,56 +1,179 @@
 <template>
-<q-layout class="row justify-center items-center q-pa-md" style="min-height: 80vh">
-  <q-page-container >
-    <q-card class="my-card q-pa-md" style="max-width: 400px;">
-      <q-card-section class="q-pb-none">
-        <div class="text-h5 text-center q-mb-md">Sign Up</div>
-        <q-form @submit.prevent="onSubmit">
-          <q-input filled v-model="user.name" label="Full Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please enter your full name']" />
-          <q-input filled v-model="user.email" label="Email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please enter your email', val => /^\S+@\S+\.\S+$/.test(val) || 'Please enter a valid email']" />
-          <q-input filled v-model="user.password" type="password" label="Password" lazy-rules :rules="[ val => val && val.length > 5 || 'Password should be more than 5 characters']" />
-          <q-input filled v-model="user.confirmPassword" type="password" label="Confirm Password" lazy-rules :rules="[ val => val === user.password || 'Passwords do not match']" />
-          
-          <div class="q-mt-md">
-            <q-btn label="Register" type="submit" color="primary" stretch />
-          </div>
-        </q-form>
-      </q-card-section>
+  <q-layout class="row justify-center items-center" style="min-height: 600px">
+    <q-page-container style="min-width: 30%">
+      <q-card class="my-card q-pa-md" style="background: var(--chamRed)">
+        <q-card-section class="q-pb-none">
+          <div class="text-h5 text-center q-mb-md">Sign Up</div>
+          <q-form @submit.prevent="onSubmit">
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.firstname"
+              label="First Name"
+              lazy-rules
+              :rules="[
+                (val) =>
+                  (val && val.length > 0) || 'Please enter your first name',
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.lastname"
+              label="Last Name"
+              lazy-rules
+              :rules="[
+                (val) =>
+                  (val && val.length > 0) || 'Please enter your last name',
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.email"
+              label="UCalgary Email"
+              lazy-rules
+              :rules="[
+                (val) => (val && val.length > 0) || 'Please enter your email',
+                (val) =>
+                  /^\S+@\S+\.\S+$/.test(val) || 'Please enter a valid email',
+                (val) =>
+                  (val && val.endsWith('@ucalgary.ca')) ||
+                  'Please enter a UCalgary email',
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.phone"
+              label="Phone Number"
+              lazy-rules
+              :rules="[
+                (val) =>
+                  (val && val.length > 0) || 'Please enter your phone number',
+                (val) =>
+                  /^\d{10}$/.test(val) ||
+                  'Please enter a valid 10-digit phone number',
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.address"
+              label="Address"
+              lazy-rules
+              :rules="[
+                (val) => (val && val.length > 0) || 'Please enter your address'
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.password"
+              type="password"
+              label="Password"
+              lazy-rules
+              :rules="[
+                (val) =>
+                  (val && val.length > 5) ||
+                  'Password should be more than 5 characters',
+              ]"
+            />
+            <q-input
+              class="q-my-sm"
+              filled
+              v-model="userInfo.confirmPassword"
+              type="password"
+              label="Confirm Password"
+              lazy-rules
+              :rules="[
+                (val) => val === user.password || 'Passwords do not match',
+              ]"
+            />
 
-      <q-card-section>
-        <div class="row justify-center q-mt-md">
-          <q-btn flat label="Already have an account? Login" color="primary" @click="goToLogin" />
-        </div>
-      </q-card-section>
-    </q-card>
-  </q-page-container>
-</q-layout>
+            <div class="q-mt-md">
+              <q-btn label="Register" type="submit" class="blue-btn btn-size" stretch />
+            </div>
+          </q-form>
+        </q-card-section>
+
+        <q-card-section>
+          <div class="row justify-center q-my-md">
+            <q-btn
+              flat
+              label="Already have an account? Login"
+              class="green-btn"
+              @click="goToLogin"
+            />
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-page-container>
+  </q-layout>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+<script>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import axios from "axios";
+import { Notify } from "quasar";
 
-const user = ref({
-  name: '',
-  email: '',
-  password: '',
-  confirmPassword: ''
-})
+export default {
+  setup() {
+    const userInfo = ref({
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      address: "",
+      password: "",
+      confirmPassword: "",
+    });
 
-const router = useRouter()
+    const router = useRouter();
+    const loading = ref(false);
 
-function onSubmit() {
-  console.log('Registering user:', user.value)
-}
+    async function onSubmit() {
+      try {
+        loading.value = true;
+        const response = await axios.post(
+          "http://localhost:8000/register",
+          userInfo.value
+        );
+        console.log(response);
+        router.push("/login");
+      } catch (error) {
+        console.error("There was an error!", error);
+        Notify.create({
+          color: "red-4",
+          message: "Please try again!",
+          icon: "error",
+          position: "center",
+          classes: "q-py-md q-px-lg",
+        });
+      } finally {
+        loading.value = false;
+      }
+    }
 
-function goToLogin() {
-  router.push('/login')
-}
+    function goToLogin() {
+      router.push("/login");
+    }
+
+    return {
+      userInfo,
+      loading,
+      onSubmit,
+      goToLogin,
+    };
+  },
+};
 </script>
 
 <style scoped>
 .my-card {
   border-radius: 25px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 </style>
