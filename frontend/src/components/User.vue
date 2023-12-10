@@ -139,10 +139,10 @@
               </div>
               <div class="column" style="align-items: flex-start">
                 <div>
-                  <span class="text-weight-bold">Date:</span> {{ doctor.appointment_date }}
+                  <span class="text-weight-bold">Date:</span> {{ doctor.date }}
                 </div>
                 <div>
-                  <span class="text-weight-bold">Time:</span> {{ doctor.appointment_time }}
+                  <span class="text-weight-bold">Time:</span> {{ doctor.time }}
                 </div>
               </div>
             </div>
@@ -154,9 +154,10 @@
 </template>
 
 <script>
-import { ref, inject, onMounted } from "vue";
+import { ref, inject, onMounted  } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import { format } from "date-fns";
 
 export default {
   setup() {
@@ -189,8 +190,7 @@ export default {
 
     const doctors = ref([]);
     // [
-    //   { id: 1, name: "Doctor1", type: "Therapy", day: "Monday", hour: "11-12" },
-    //   { id: 1, name: "Doctor2", type: "Therapy", day: "Monday", hour: "11-12" },
+    //   { appointment_id: 1, doctor_name: "Doctor1", doctor_specilization: "Therapy", date: "Monday", time: "11-12" },
     // ]
 
     function onItemClick(option) {
@@ -209,10 +209,19 @@ export default {
           "http://localhost:8000/get-appointments-user",
           {
             username: localStorage.getItem("username"),
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
-        console.log(response.data);
-        doctors.value = response.data;
+        console.log("json file", typeof(response.data));
+        doctors.value = response.data.map(doctor => ({
+          ...doctor,
+          date: format(new Date(doctor.date), "yyyy/MM/dd"),
+          time: format(new Date(`1970-01-01T${doctor.time}`), "HH:mm a")
+        }));
       } catch (error) {
         console.error("There was an error!", error);
       }
@@ -229,7 +238,7 @@ export default {
       selectedOption,
       onItemClick,
       goToScheduler,
-      expanded,
+      expanded
     };
   },
 };

@@ -17,7 +17,12 @@
           </div>
         </div>
         <div class="q-my-auto q-ml-md">
-          <q-btn class="blue-btn" padding="xs lg" label="Search" @click="SearchType" />
+          <q-btn
+            class="blue-btn"
+            padding="xs lg"
+            label="Search"
+            @click="SearchType"
+          />
         </div>
       </div>
     </div>
@@ -26,7 +31,7 @@
         label="Add to the appointments"
         class="green-btn"
         @click="addAppointment"
-        :disabled="selected.length == 0"
+        :disabled="isButtonDiabled"
       />
     </div>
     <q-table
@@ -51,7 +56,13 @@
       :loading="loading"
     >
       <template v-slot:top-right>
-        <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+        <q-input
+          borderless
+          dense
+          debounce="300"
+          v-model="filter"
+          placeholder="Search"
+        >
           <template v-slot:append>
             <q-icon name="search" />
           </template>
@@ -62,7 +73,7 @@
 </template>
 
 <script>
-import { ref, computed, nextTick, toRaw } from "vue";
+import { ref, computed, nextTick, toRaw, watch } from "vue";
 import { Notify } from "quasar";
 import { useRouter } from "vue-router";
 import { format } from "date-fns";
@@ -75,7 +86,12 @@ export default {
     const pagination = ref({});
     const router = useRouter();
     const selected = ref([]);
-    const options = ref(["Medical", "Mental Health", "Chiropractic", "Massage"]);
+    const options = ref([
+      "Medical",
+      "Mental Health",
+      "Chiropractic",
+      "Massage",
+    ]);
     const selected_appointment_type = ref(null);
     const filter = ref("");
     const loading = ref(false);
@@ -147,7 +163,9 @@ export default {
       }
 
       const currentIndex =
-        selected.value.length > 0 ? computedRows.indexOf(toRaw(selected.value[0])) : -1;
+        selected.value.length > 0
+          ? computedRows.indexOf(toRaw(selected.value[0]))
+          : -1;
       const currentPage = pagination.value.page;
       const rowsPerPage =
         pagination.value.rowsPerPage === 0
@@ -203,7 +221,9 @@ export default {
 
         nextTick(() => {
           const { computedRows } = tableRef.value;
-          selected.value = [computedRows[Math.min(index, computedRows.length - 1)]];
+          selected.value = [
+            computedRows[Math.min(index, computedRows.length - 1)],
+          ];
           tableRef.value.$el.focus();
         });
       } else {
@@ -238,8 +258,8 @@ export default {
             },
           }
         );
-        console.log("json file", JSON.parse(response.data));
-        rows.value = JSON.parse(response.data);
+        console.log("json file", response.data);
+        rows.value = response.data;
         console.log("rows value", rows.value);
       } catch (error) {
         console.error("There was an error!", error);
@@ -255,25 +275,38 @@ export default {
       }
     }
 
+    function sendEmail() {
+      try {
+        const response = axios.post("http://localhost:8000/send-email", {
+          username: localStorage.getItem("username"),
+        });
+        console.log("email sent:", response.data);
+      } catch (error) {
+        console.error("There was an error with sending email!", error);
+      }
+    }
+
     async function addAppointment() {
       console.log(selected.value[0].appointment_id);
       var id = selected.value[0].appointment_id;
       try {
+        loading.value = true;
         const response = await axios.post(
           "http://localhost:8000/set-appointments",
           {
             appointment_id: id,
-            username:  localStorage.getItem("username")
+            username: localStorage.getItem("username"),
           }
         );
-        console.log(response);
-          Notify.create({
+        console.log(response.data);
+        Notify.create({
           color: "green-5",
           message: "Reservation was successful!",
           icon: "check",
           position: "center",
           classes: "q-py-md q-px-lg",
         });
+        sendEmail();
         router.replace("/user");
       } catch (error) {
         console.error("There was an error!", error);
@@ -288,6 +321,13 @@ export default {
         loading.value = false;
       }
     }
+
+    const isButtonDiabled = computed(() => {
+      if (selected.value.length === 0) {
+        return true;
+      }
+      return loading.value;
+    });
 
     return {
       tableClass: computed(() =>
@@ -316,6 +356,7 @@ export default {
       selected_appointment_type,
       SearchType,
       loading,
+      isButtonDiabled,
     };
   },
 };
