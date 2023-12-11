@@ -199,6 +199,24 @@ async def get_appointments_times(request: EmailUser):
     return JSONResponse(content=json.dumps(result), status_code=200)
 
 
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime, timedelta
+
+scheduler = BackgroundScheduler()
+scheduler.start()
+def send_email_later(username):
+    subprocess.check_output(["python", "main.py", "--send_email", username])
+@app.post("/send-reminder-email")
+async def get_appointments_times():
+    username = 	"amber.lowe@example.com"
+     # Calculate when to send the email (24 hours before appointment time)
+    appointment_time = datetime.now().replace(hour=17, minute=50)
+    send_time = appointment_time - timedelta(minutes=2)
+
+    # Schedule the task
+    scheduler.add_job(send_email_later, 'date', run_date=send_time, args=[username])
+    return "done"
+
 # Define a root for reading from the database
 @app.get("/db")
 async def db():
