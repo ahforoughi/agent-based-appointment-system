@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 import json
 from fastapi.middleware.cors import CORSMiddleware
 import datetime
+from sqlalchemy.orm import Session
 
 # config logging
 import logging
@@ -212,35 +213,27 @@ def send_email_later(username):
 class remindUser(BaseModel):
     username: str
     date: datetime.datetime
+    time: datetime.time
 
 scheduler = BackgroundScheduler(timezone="America/Edmonton")
 scheduler.start()
 
 @app.post("/send-reminder")
 async def send_reminder(request: remindUser):
-     # Calculate when to send the email (24 hours before appointment time)
-    # appointment_time = datetime.datetime.now().replace(hour=20, minute=7)
-    appointment_time = datetime.datetime.now()  # December 10, 2023, 15:30
+    print(request.time, request.date)
+    appointment_time = request.date.replace(hour=request.time.hour, minute=request.time.minute)
 
     print(appointment_time)
-
-    # calcualte the new time based on appointment time 
-    send_time = appointment_time + datetime.timedelta(minutes=1)
-    send_time += datetime.timedelta(hours=1)
-
+    send_time = appointment_time - datetime.timedelta(minutes=2)
 
     print(send_time)
     scheduler.add_job(send_email_later, 'date', run_date=send_time, args=[request.username])
         
-
+    return JSONResponse(content={"message": "Reminder is set"}, status_code=200)
 
 # Make sure to shut down the scheduler when the application exits
 import atexit
 atexit.register(lambda: scheduler.shutdown())
-
-
-
-
 
 
 # Define a root for reading from the database

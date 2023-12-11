@@ -287,10 +287,12 @@ export default {
     }
 
     function sendReminder() {
+      console.log(selected.value[0].date, selected.value[0].time);
       try {
         const response = axios.post("http://localhost:8000/send-reminder", {
           username: localStorage.getItem("username"),
-          date: selected.value[0].date
+          date: selected.value[0].date,
+          time: selected.value[0].time
         });
         console.log("email reminder sent:", response.data);
       } catch (error) {
