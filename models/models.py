@@ -28,7 +28,6 @@ class Doctor(Base):
     last_name = Column(String)
     phone = Column(String)  
     specialization = Column(String)  
-    available_times = Column(String)  
 
     appointments = relationship('Appointment', back_populates='doctors')
 

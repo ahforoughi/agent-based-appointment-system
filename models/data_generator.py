@@ -56,10 +56,6 @@ doctors_data = [
         "username": "iona.kaiser@example.com",
         "phone": "9876543210",
         "specialization": "medical",
-        "available_times": json.dumps({
-            "Monday": ['10-11', '11-12', '13-14', '14-15', '15-16'], 
-            "Wednesday": ['10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Harper",
@@ -67,10 +63,6 @@ doctors_data = [
         "username": "harper.marsh@example.com",
         "phone": "1676543210",
         "specialization": "medical",
-        "available_times": json.dumps({
-            "Monday": ['11-12', '13-14', '14-15', '15-16'], 
-            "Thursday": ['9-10', '10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Robin",
@@ -78,11 +70,6 @@ doctors_data = [
         "username": "robin.hamilton@example.com",
         "phone": "8349032109",
         "specialization": "mental_health",
-        "available_times": json.dumps({
-            "Monday": ['11-12', '13-14', '14-15', '15-16'], 
-            "Wednesday": ['10-11', '11-12', '13-14', '14-15'],
-            "Friday": ['9-10', '10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Carter",
@@ -90,10 +77,6 @@ doctors_data = [
         "username": "carter.hardy@example.com",
         "phone": "9635432109",
         "specialization": "mental_health",
-        "available_times": json.dumps({
-            "Tuesday": ['11-12', '13-14', '14-15', '15-16'], 
-            "Thursday": ['10-11', '11-12', '13-14', '14-15'],
-        })
     },
     {
         "first_name": "Hugh",
@@ -101,11 +84,6 @@ doctors_data = [
         "username": "hugh.hammond@example.com",
         "phone": "8765432109",
         "specialization": "chiropractic",
-        "available_times": json.dumps({
-            "Monday": ['11-12', '13-14', '14-15', '15-16'], 
-            "Wednesday": ['10-11', '11-12', '13-14', '14-15'],
-            "Friday": ['9-10', '10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Charlie",
@@ -113,12 +91,6 @@ doctors_data = [
         "username": "charlie.holmes@example.com",
         "phone": "9765432149",
         "specialization": "chiropractic",
-        "available_times": json.dumps({
-            "Monday": ['11-12', '13-14', '14-15', '15-16'], 
-            "Tuesday": ['10-11', '11-12', '13-14', '14-15'],
-            "Thursday": ['11-12', '13-14', '14-15', '15-16'],
-            "Friday": ['9-10', '10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Irven",
@@ -126,10 +98,6 @@ doctors_data = [
         "username": "irven.landry@example.com",
         "phone": "8765432590",
         "specialization": "massage",
-        "available_times": json.dumps({
-            "Tuesday": ['10-11', '11-12', '13-14', '14-15', '15-16'], 
-            "Friday": ['9-10', '10-11', '11-12', '13-14'],
-        })
     },
     {
         "first_name": "Ellen",

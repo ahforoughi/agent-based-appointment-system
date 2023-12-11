@@ -5,7 +5,7 @@ from agents.login_agent import LoginAgent
 from agents.scheduler_agent import SchedulerAgent
 from agents.email_agent import EmailAgent
 from constants import REGISTER_AGENT, CLIENT_AGENT, LOGIN_AGENT, SCHEDULER_AGENT, EMAIL_AGENT
-
+import asyncio
 from args_parser import parser
 
 args = parser.parse_args()
@@ -78,6 +78,9 @@ async def main():
         client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
                                    behavior=behavior, appoinment_type=appoinment_type)
         await client_agent.start(auto_register=True)
+        client_agent.web.start(hostname="127.0.0.1", port="10000")
+
+
 
     elif args.set_appoinment:
         print("Setting appointment")
@@ -114,6 +117,7 @@ async def main():
         await client_agent.start(auto_register=True)
 
 
+    
 
     # await spade.wait_until_finished(ClientAgent)
     # print("Agents finished")
