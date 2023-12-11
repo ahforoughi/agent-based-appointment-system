@@ -7,7 +7,7 @@ from pydantic import BaseModel, EmailStr
 from fastapi.responses import JSONResponse
 import json
 from fastapi.middleware.cors import CORSMiddleware
-
+import datetime
 
 # config logging
 import logging
@@ -102,9 +102,6 @@ async def login(login_data: LoginData):
 class AppointmentType(BaseModel):
     appoinment_type: str
 
-import datetime
-
-
 def convert_to_json(var):
     # Step 1: Parse the string
     parsed_data = eval(var)
@@ -117,10 +114,7 @@ def convert_to_json(var):
             item['time'] = item['time'].isoformat()
 
     # Step 3: Convert to JSON
-    return json.dumps(parsed_data)
-
-
-
+    return parsed_data
 
 @app.post("/appointments")
 async def get_appointments_times(request: AppointmentType):
@@ -135,15 +129,9 @@ async def get_appointments_times(request: AppointmentType):
         output = subprocess.check_output(["python", "main.py", "--get_appoinments_times", type_appoin])
 
     result = output.splitlines()[-1].decode("utf-8")
-    print(convert_to_json(result))
     result = convert_to_json(result)
-    
-    # convert the result to json
-    result = json.loads(result)
-    print(result)
-    # return result
-    # return the output as json 
-    return JSONResponse(content=json.dumps(result), status_code=200)
+
+    return JSONResponse(content=result, status_code=200)
 
 
 
@@ -189,12 +177,12 @@ async def get_appointments_times(request: EmailUser):
             "appointment_id": appointment.id,
             "doctor_specilization": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().specialization,
             "doctor_name": db.query(Doctor).filter(Doctor.id == appointment.doctor_id).first().first_name,
-            "time": appointment.time,
-            "date": appointment.date,
+            "time": appointment.time.isoformat(),
+            "date": appointment.date.isoformat(),
         })
     
     db.close()
-    return JSONResponse(content=json.dumps(appointments_times), status_code=200)
+    return JSONResponse(content=appointments_times, status_code=200)
 
 @app.post("/send-email")
 async def get_appointments_times(request: EmailUser):
