@@ -78,7 +78,6 @@ async def main():
         client_agent = ClientAgent(CLIENT_AGENT.jid, CLIENT_AGENT.password, 
                                    behavior=behavior, appoinment_type=appoinment_type)
         await client_agent.start(auto_register=True)
-        client_agent.web.start(hostname="127.0.0.1", port="10000")
 
 
 

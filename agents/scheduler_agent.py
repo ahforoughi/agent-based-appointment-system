@@ -137,7 +137,7 @@ class SchedulerAgent(Agent):
             print("ReturnAvailableTimes behavior added")
             receive_times_behavior = self.ReturnAvailableTimes()
             receive_times_template = Template()
-            receive_times_template.set_metadata("performative", "request")
+            # receive_times_template.set_metadata("performative", "request")
             # receive_times_template.set_metadata("action", "get_appoinments_times")
             self.add_behaviour(receive_times_behavior, receive_times_template)
         
@@ -145,7 +145,7 @@ class SchedulerAgent(Agent):
             print("SetAppoinment added")
             set_time_behavior = self.SetAppoinment()
             set_time_template = Template()
-            set_time_template.set_metadata("performative", "request")
+            # set_time_template.set_metadata("performative", "request")
             # set_time_template.set_metadata("action", "set_appointment")
             self.add_behaviour(set_time_behavior, set_time_template)
 
