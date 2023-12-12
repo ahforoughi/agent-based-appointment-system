@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 # Create an instance of the FastAPI class
-app = FastAPI()
+app = FastAPI(port=9000, debug=True)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
